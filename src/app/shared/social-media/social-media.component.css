@@ -1,0 +1,17 @@
+#socialMedia {
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    gap: 1rem;
+}
+
+img {
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    scale: 1.5;
+}

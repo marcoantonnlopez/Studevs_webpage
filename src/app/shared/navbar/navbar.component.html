@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg ">
   <div id="sec1Navbar">
     <a class="nav-link" routerLink="/home">
-      <img src="assets/images/studevsLogo.png" alt="Logo">
+      <img *ngIf="logoNavbar" [src]="logoNavbar" alt="Descripción alternativa">
     </a>
   </div>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
