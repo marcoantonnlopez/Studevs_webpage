@@ -61,13 +61,22 @@ img {
 
 }
 
+/** --------- IMG -------- */
+img {
+    transition: 0.3s ease;
+}
+img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
 /** --------- BTN -------- */
 
 /*** ESTILOS BOTÓN GROW ELLIPSE ***/
 .ov-btn-grow-ellipse {
     font-style: none;
     text-decoration: none;
-    padding: 0 10px ;
+    padding: 0 20px ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +93,6 @@ img {
     display: inline-block;
     transition: 0.3s ease-out;
     opacity: 0.7;   
-
   }
   .ov-btn-grow-ellipse:hover {
     color: white;
@@ -99,16 +107,16 @@ img {
     z-index: -1;
     /* padding: 16px 16px; */
     display: block;
-    border-radius: 80%;
-    left: -50%;
-    right: -50%;
-    top: -40%;
+    border-radius: 50%;
+    left: -150%;
+    right: -0%;
+    top: -150%;
     bottom: -150%;
     transform: scale(0, 0);
     transition: all 0.4s ease;
   }
   .ov-btn-grow-ellipse:hover::after {
-    background: linear-gradient(45deg, #40CAFD 20%, #a90eac 100%);
+    background: linear-gradient(45deg, #40CAFD 40%, #a90eac 100%);
     transition: all 0.8s ease-out;
     transform: scale(1, 1);
   }
