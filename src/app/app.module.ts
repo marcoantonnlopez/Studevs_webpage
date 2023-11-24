@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 // Share
 import { SocialMediaComponent } from './shared/social-media/social-media.component';
 import { StudevCardForHomeComponent } from './home/components/studev-card-for-home/studev-card-for-home.component';
+import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StudevCardForHomeComponent } from './home/components/studev-card-for-ho
     RegisterComponent,
     HomeComponent,
     SocialMediaComponent,
-    StudevCardForHomeComponent
+    StudevCardForHomeComponent,
+    BtnPrincipalComponent
   ],
   imports: [
     BrowserModule,
