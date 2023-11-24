@@ -10,8 +10,16 @@ nav {
     position: fixed;
     z-index: 1000;
     background-color: #40cbfd00;
+    transition: background-color 0.5s ease;
     /* background-color: linear-gradient(179deg, #0E091F 0%, rgba(14, 9, 31, 0.66) 37.79%, rgba(29, 28, 28, 0.13) 68.89%, rgba(14, 9, 31, 0.92) 75.23%, #0E091F 80.24%); */
 }
+
+nav.scrolled {
+    background-color: #0e091e9f; /* Color de fondo con transparencia */
+    backdrop-filter: blur(50px); 
+    /* opacity: 0.5; */
+}
+
 #sec1Navbar{
     display: flex;
     flex-direction: row;
@@ -109,14 +117,17 @@ img:hover {
     display: block;
     border-radius: 50%;
     left: -150%;
-    right: -0%;
+    right: -50%;
     top: -150%;
     bottom: -150%;
     transform: scale(0, 0);
     transition: all 0.4s ease;
   }
   .ov-btn-grow-ellipse:hover::after {
-    background: linear-gradient(45deg, #40CAFD 40%, #a90eac 100%);
-    transition: all 0.8s ease-out;
+    background: linear-gradient(45deg, #40cbfdc5 50%, rgba(151, 15, 214, 0.582) 75%, #f025f3 100%);
+    /* background: linear-gradient(45deg, #40CAFD 40% 100%); */
+    backdrop-filter: blur(50px); 
+    
+    transition: all 1.5s ease-out;
     transform: scale(1, 1);
   }

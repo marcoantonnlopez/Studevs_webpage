@@ -1,4 +1,5 @@
-  <nav class="navbar navbar-expand-lg ">
+  <!-- <nav class="navbar navbar-expand-lg "> -->
+<nav class="navbar navbar-expand-lg" [class.scrolled]="isScrolled">
   <div id="sec1Navbar">
     <a class="nav-link" routerLink="/home">
       <img *ngIf="logoNavbar" [src]="logoNavbar" alt="Descripción alternativa">
