@@ -24,9 +24,15 @@
         <!-- [routerLink]="['/register']" routerLinkActive="router-link-active"  -->
     </div>
     <div class="sec22">
-        <!-- <div class="xbox green"></div> -->
         <app-studev-card-for-home></app-studev-card-for-home>
-        <!-- <app-animations></app-animations> -->
+        <div id="adminScroll">
+            <div class="image-container adminsScroll">
+                <img *ngIf="adminScroll1" [src]="adminScroll1" alt="Descripción alternativa">
+            </div>
+            <div class="image-container-reverse adminsScroll">
+                <img *ngIf="adminScroll2" [src]="adminScroll2" alt="Descripción alternativa">
+            </div>
+        </div>
     </div>
 </section>
 

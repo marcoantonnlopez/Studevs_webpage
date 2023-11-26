@@ -67,4 +67,43 @@
     opacity: 1;
   }
 }
+
+/*! - animacion admins autoscroll home - */
+
+  .image-container {
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desplace fuera del contenedor */
+    /* height: 50%;  */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ajusta esto según tus necesidades */
+    animation: moveUpDown 35s linear infinite; /* Ajusta la duración según quieras */
+  }
+  
+  .image-container-reverse {
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desplace fuera del contenedor */
+    /* height: 50%;  */
+  }
+  
+  .image-container-reverse img {
+    width: 100%; /* Ajusta esto según tus necesidades */
+    animation: moveUpDown-reverse 35s linear infinite; /* Ajusta la duración según quieras */
+  }
+
+  @keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(30%);
+    }
+    50% {
+      transform: translateY(-35%); /* Ajusta este valor según el tamaño de tu imagen */
+    }
+  }
+  @keyframes moveUpDown-reverse {
+    0%, 100% {
+      transform: translateY(-35%);
+    }
+    50% {
+      transform: translateY(30%); /* Ajusta este valor según el tamaño de tu imagen */
+    }
+  }
   

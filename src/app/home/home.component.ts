@@ -36,12 +36,18 @@ gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionP
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  logo: string = ''; 
+  logo: string = '';
+  adminScroll1: string = ''; 
+  adminScroll2: string = ''; 
+  background: string = '';
 
   @ViewChildren('reveal') elementsToReveal!: QueryList<ElementRef>;
 
   ngOnInit(): void {
     this.logo = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700630770/share/LogoNormal_ojrguh.svg';
+    this.adminScroll1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700984419/home/sec2_adminScroll1_xlnqpr.svg';
+    this.adminScroll2 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700985744/sec2_adminScroll2_pqwky2.png';
+    this.background = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700988658/sec2_adminScroll_Background_ly5adg.svg';
   }
   
   ngAfterViewInit() {
