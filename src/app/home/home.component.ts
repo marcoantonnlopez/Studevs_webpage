@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { gsap } from "gsap";
     
 import { CustomEase } from "gsap/CustomEase";
@@ -14,19 +15,57 @@ import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css', './../shared/animations/animations.component.css'],
+   animations: [
+    trigger('fadeIn', [
+      state('void', style({ opacity: 0 })),
+      state('*', style({ opacity: 1 })),
+      transition(':enter', [
+        animate('1s ease-in')
+      ])
+    ])
+  ]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit {
   logo: string = ''; 
+
+  @ViewChildren('reveal') elementsToReveal!: QueryList<ElementRef>;
 
   ngOnInit(): void {
     this.logo = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700630770/share/LogoNormal_ojrguh.svg';
   }
   
+  ngAfterViewInit() {
+    window.addEventListener('scroll', () => this.reveal());
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('scroll', () => this.reveal());
+  }
+
+  reveal() {
+    const windowHeight = window.innerHeight;
+    this.elementsToReveal.forEach(elementRef => {
+      const element = elementRef.nativeElement;
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        element.classList.add('active');
+      } else {
+        element.classList.remove('active');
+      }
+    });
+  }
 }
+
+// window.addEventListener("scroll", reveal);

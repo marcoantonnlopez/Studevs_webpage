@@ -1,8 +1,8 @@
 <section id="secOne">
     <div id="c1"></div>
-    <div id="c2">
+    <div id="c2" [@fadeIn]>
         <!-- <img src="../../assets/images/LogoNormal.svg" alt=""> -->
-        <div id="c2-1">
+        <div id="c2-1" class="">
             <img *ngIf="logo" [src]="logo" alt="Descripción alternativa">
             <h1>From <span class="blueText">curious </span>learners to <br>tech <span class="blueText"> visionaries </span></h1>
             <app-social-media></app-social-media>
@@ -14,18 +14,19 @@
 </section>
     
 <section id="secTwo">
-    <div class="sec21">
+    <div class="sec21 reveal fade-bottom">
         <div>
             <h5>Student or not,</h5>
-            <h3>Studevs is your <br> community</h3>
+            <h3 >Studevs is your <br> community</h3>
         </div>
         <p>¿Are you passionate about <span><b> technology? </b></span></p>
         <app-btn-principal></app-btn-principal>
         <!-- [routerLink]="['/register']" routerLinkActive="router-link-active"  -->
     </div>
     <div class="sec22">
-        <div class="xbox green"></div>
+        <!-- <div class="xbox green"></div> -->
         <app-studev-card-for-home></app-studev-card-for-home>
+        <!-- <app-animations></app-animations> -->
     </div>
 </section>
 

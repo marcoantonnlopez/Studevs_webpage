@@ -1,0 +1,17 @@
+<div class="animation-container">
+    <div>
+      <button (click)="toggleFadeAnimation()">Toggle Fade Animation</button>
+      <div *ngIf="showFadeAnimation" [@fadeAnimation]>
+        Fade Animation Example
+      </div>
+    </div>
+  
+    <div class="css-animation">
+      CSS Animation Example
+    </div>
+  
+    <div id="js-animation">
+      JavaScript Animation Example
+    </div>
+  </div>
+  

@@ -15,6 +15,9 @@ import { SocialMediaComponent } from './shared/social-media/social-media.compone
 import { StudevCardForHomeComponent } from './home/components/studev-card-for-home/studev-card-for-home.component';
 import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimationsComponent } from './shared/animations/animations.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +30,15 @@ import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.comp
     HomeComponent,
     SocialMediaComponent,
     StudevCardForHomeComponent,
-    BtnPrincipalComponent
+    BtnPrincipalComponent,
+    AnimationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CloudinaryModule
+    CloudinaryModule,
+    BrowserAnimationsModule, //para animaciones
+
   ],
   providers: [],
   bootstrap: [AppComponent]
