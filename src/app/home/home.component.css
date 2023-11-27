@@ -218,33 +218,13 @@ letter-spacing: -2.4px;
 
 #secThree img {
     /* width: 30%; */
-    width: 48%;
+    width: 44%;
     height: 63%;
     object-fit: cover;
     object-position: center;
     border-radius: 20px ;
 }
 
-/* sec3 animation */
-/* .zoom {
-    position: sticky;
-    top: 20vh;
-    will-change: transform;
-    width: 100%;
-    transform: scale(2.2);
-  }
-  
-  .bottom {
-    height: 100vh;
-  }
-  
-  .top {
-    height: 80vh;
-  }
-  
-  .wrap {
-    height: 200vh;
-  } */
   .zoom {
     transition: transform 3.6s ease; /* Suaviza la transición de escala */
     display: flex; /* Asegura que las imágenes estén alineadas */
@@ -263,7 +243,7 @@ letter-spacing: -2.4px;
 
 #secFour {
     width: 100%;
-    height: 110vh;
+    height: 120vh;
     padding-top: 60px;
     background-color: #0E091F;
     display: flex;
@@ -273,5 +253,228 @@ letter-spacing: -2.4px;
         /* flex-wrap: wrap; */
     text-align: center;
     /* gap: 2rem; */
-    /* gap: 05%; */
+    gap: 05%;
+    background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701101957/home/sec4_background_flkyh8.svg');
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
 }
+
+.sec4 {
+    color: white;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 02%;
+    flex-wrap: wrap;
+    
+    /* overflow: hidden; */
+
+}
+
+#sec41 span {
+    color :#40CAFD;
+}
+
+#sec42 {
+    font-weight: 500;
+    /* font-size: 5rem; */
+}
+
+#sec41 h3 {
+    font-size: 400%;
+}
+
+#sec41 p {
+    font-size: 150%;
+    text-align: end;
+    letter-spacing: -0.75px;
+}
+
+#sec42  h3{
+    font-size: 400%;
+}
+
+.sec4Data {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#sec42  p{
+    font-size: 90%;
+}
+
+#sec42 .line{
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/** ----------- SecFive ------------ */
+#secFive {
+    width: 100%;
+    height: 110vh;
+        background-color: #0E091F;
+}
+
+.imagesGalleryGrid {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, calc((110vh - 3 * 10px) / 4));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    max-height: 100%;
+}
+
+
+.item1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.item2 {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+}
+
+.item3 {
+    grid-column: 5 / 8;
+    grid-row: 1 / 2;
+}
+
+.item4 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+.item5 {
+    grid-column: 3 / 6;
+    grid-row: 2 / 4;
+    background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112974/home/sec5_5_uszogj.svg');
+        object-fit: cover;
+        border-radius: 15px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+.item5 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10%;
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+}
+.item5 h2 {
+    color: white;
+    font-size: 500%;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -4.4px;
+}
+
+.item5 a {
+    color: white;
+    font-size: 100%;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 150%;
+    font-weight: 600;
+    width: 100%;
+    background-color: #00A9E8;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+}
+
+.item5 a:hover {
+    /* background-color:#31c2f7; */
+    background-color:#40CAFD;
+}
+
+.item6 {
+    grid-column: 6 / 8;
+    grid-row: 2 / 3;
+}
+
+.item7 {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+}
+
+.item8 {
+    grid-column: 4 / 6;
+    grid-row: 4 / 5;
+}
+
+.item9 {
+    grid-column: 6 / 8;
+    grid-row: 3 / 5;
+}
+
+
+/** ----------- SecSix ------------ */
+#secSix {
+    width: 100%;
+    height: 100vh;
+        background-color: #0E091F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#secSix h2 {
+    background-color: #40cbfd00;
+    color: #FFF;
+    text-align: center;
+    font-family: Aileron;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -2.4px;
+}
+
+
+
+/** ----------- SecSeven ------------ */
+#secSeven {
+    width: 100%;
+    height: 100vh;
+    background-color: #0E091F;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#secSeven div{
+
+}
+
+
+

@@ -43,6 +43,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   sec3_1: string = '';
   sec3_2: string = '';
   sec3_3: string = '';
+  // sec4
+  sec4: string = '';
+  // sec5
+  sec5_img1: string = '';
+  sec5_img2: string = '';
+  sec5_img3: string = '';
+  sec5_img4: string = '';
+  sec5_img5: string = '';
+  sec5_img6: string = '';
+  sec5_img7: string = '';
+  sec5_img8: string = '';
+  sec5_img9: string = '';
   scale = 1;
 
   @ViewChildren('reveal') elementsToReveal!: QueryList<ElementRef>;
@@ -54,10 +66,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.sec3_1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992803/sec3_1_azjb0s.svg';
     this.sec3_2 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992803/sec3_2_e2zaqr.svg';
     this.sec3_3 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992802/sec3_3_g5qjvs.svg';
+    this.sec4 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701101957/home/sec4_background_flkyh8.svg';
+ 
+    this.sec5_img1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112937/home/sec5_1_nyzm3c.svg';
+    this.sec5_img2 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112991/home/sec5_2_mttcaz.svg';
+    this.sec5_img3 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112934/home/sec5_3_tgijut.svg';
+    this.sec5_img4 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112942/home/sec5_4_uzpmah.svg';
+    this.sec5_img5 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112974/home/sec5_5_uszogj.svg';
+    this.sec5_img6 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701114011/sec5_6_uxok6w.png';
+    this.sec5_img7 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112980/home/sec5_7_t82yed.svg';
+    this.sec5_img8 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112964/home/sec5_8_ybiekh.svg';
+    this.sec5_img9 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701112932/home/sec5_9_b3xyf9.svg'; 
   }
   
   ngAfterViewInit() {
-    // window.addEventListener('scroll', () => this.reveal());
     window.addEventListener('scroll', () => this.onWindowScroll());
   }
 
@@ -98,4 +120,3 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 }
 
-// window.addEventListener("scroll", reveal);

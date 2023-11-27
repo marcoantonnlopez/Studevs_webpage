@@ -40,46 +40,93 @@
     <div id="sec31"></div>
     <p class="reveal fade-bottom">In Studevs, we inspire and empower <span><br>future tech professionals</span> with <br> hackathons, events, and conferences.</p>
     
-    <!-- <div class="top">
-        <div class="wrap"> -->
-            <div id="sec32" class="zoom" [style.transform]="'scale(' + scale + ')'">
-            <!-- <div id="sec32" class="zoom"> -->
-                <img *ngIf="sec3_1" [src]="sec3_1" alt="Descripción alternativa">
-                <img *ngIf="sec3_2" [src]="sec3_2" alt="Descripción alternativa">
-                <img *ngIf="sec3_3" [src]="sec3_3" alt="Descripción alternativa">
-            </div>
-        <!-- </div>
-    </div> -->
+    <div id="sec32" class="zoom" [style.transform]="'scale(' + scale + ')'">
+        <img *ngIf="sec3_1" [src]="sec3_1" alt="Descripción alternativa">
+        <img *ngIf="sec3_2" [src]="sec3_2" alt="Descripción alternativa">
+        <img *ngIf="sec3_3" [src]="sec3_3" alt="Descripción alternativa">
+    </div>
     <div class="bottom"></div>
 
-    <!-- <section class="top"></section>
-<section class="wrap">
-  <img class="zoom" src="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F5b8fd21c9bd74e9cb07b8a44c1e93649" >
-</section>
-<section class="bottom"></section> -->
 </section>
 
 <section id="secFour">
+    <div class="sec4  reveal fade-bottom" id="sec41">
+        <h3>Our <span>Impact</span></h3>
+        <p>We have left a possitive mark in our community <br> with our growth, notable achievements <br> and awards.</p>
+    </div>
+    <div class="sec4 reveal fade-bottom" id="sec42">
+        <div class="sec4Data">
+            <h3>+ 150</h3>
+            <div class="line"></div>
+            <p>More than <span> 150 members </span> in the community</p>
+        </div>
+        <div class="sec4Data">
+            <h3>+ 10</h3>
+            <div class="line"></div>
+            <p>More than <span>10 participations</span> in hackathons</p>
+        </div>
+        <div class="sec4Data">
+            <h3>+ 13</h3>
+            <div class="line"></div>
+            <p>More than <span>13 awards</span></p>
+        </div>
+    </div>
+</section>
 
+<section id="secFive">
+    <!-- <section class="imagesGalleryGrid reveal fade-bottom"> -->
+        <section class="imagesGalleryGrid ">
+        <div class="grid-item item1 ">
+            <img *ngIf="sec5_img1" [src]="sec5_img1" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item2 ">
+            <img *ngIf="sec5_img2" [src]="sec5_img2" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item3 ">
+            <img *ngIf="sec5_img3" [src]="sec5_img3" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item4 ">
+            <img *ngIf="sec5_img4" [src]="sec5_img4" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item5 ">
+            <div class="reveal fade-bottom">
+                <h2>Relive the experience</h2>
+                <a href="" routerLink="/register">See events</a>
+            </div>
+        </div>
+        <div class="grid-item item6 ">
+            <img *ngIf="sec5_img6" [src]="sec5_img6" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item7 ">
+            <img *ngIf="sec5_img7" [src]="sec5_img7" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item8 ">
+            <img *ngIf="sec5_img8" [src]="sec5_img8" alt="Descripción alternativa">
+        </div>
+        <div class="grid-item item9 ">
+            <img *ngIf="sec5_img9" [src]="sec5_img9" alt="Descripción alternativa">
+        </div>
+    </section>
+
+</section>
+
+<section id="secSix">
+    <h2 class="reveal fade-bottom">Projects</h2>
+    <div class="projects">
+
+    </div>
+</section>
+
+<section id="secSeven">
+    <div>
+        <h2>Join the net</h2>
+        <p>Learn from experiences beside our community!</p>
+    </div>
+    <app-btn-principal></app-btn-principal>
 </section>
 <script>
     gsap.to(".box", { 
   x: 200,
 });
 
-// * Sec3
-// const zoom = document.querySelector('.zoom');
-// const minZoom = 1;
-// const maxZoom = 2;
-
-// addEventListener('scroll', e => {
-// 	const vh = window.innerHeight / 100;
-//   const scrollTop = document.documentElement.scrollTop;
-//   const start = 100 * vh;
-//   const stop = 200 * vh;
-//   if (scrollTop > start && scrollTop < stop) {
-// 	  const scale = Math.max(2.2 - (scrollTop - start) / 500, 1);
-//   	zoom.style.transform = `scale(${scale})`
-//   }
-// })
 </script>
