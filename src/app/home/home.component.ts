@@ -1,5 +1,5 @@
 // import { Component, OnInit } from '@angular/core';
-import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { gsap } from "gsap";
     
 import { CustomEase } from "gsap/CustomEase";
@@ -39,7 +39,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   logo: string = '';
   adminScroll1: string = ''; 
   adminScroll2: string = ''; 
-  background: string = '';
+  // sec3
+  sec3_1: string = '';
+  sec3_2: string = '';
+  sec3_3: string = '';
+  scale = 1;
 
   @ViewChildren('reveal') elementsToReveal!: QueryList<ElementRef>;
 
@@ -47,15 +51,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.logo = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700630770/share/LogoNormal_ojrguh.svg';
     this.adminScroll1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700984419/home/sec2_adminScroll1_xlnqpr.svg';
     this.adminScroll2 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700985744/sec2_adminScroll2_pqwky2.png';
-    this.background = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700988658/sec2_adminScroll_Background_ly5adg.svg';
+    this.sec3_1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992803/sec3_1_azjb0s.svg';
+    this.sec3_2 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992803/sec3_2_e2zaqr.svg';
+    this.sec3_3 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992802/sec3_3_g5qjvs.svg';
   }
   
   ngAfterViewInit() {
-    window.addEventListener('scroll', () => this.reveal());
+    // window.addEventListener('scroll', () => this.reveal());
+    window.addEventListener('scroll', () => this.onWindowScroll());
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', () => this.reveal());
+    window.removeEventListener('scroll', () => this.onWindowScroll());
   }
 
   reveal() {
@@ -71,6 +78,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
         element.classList.remove('active');
       }
     });
+  }
+
+  // Sec3 animation
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const vh = window.innerHeight / 100;
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const start = 100 * vh;
+    const stop = 200 * vh;
+
+    if (scrollTop > start && scrollTop < stop) {
+      this.scale = Math.max(2.2 - (scrollTop - start) / 500, 1);
+    } else if (scrollTop <= start) {
+      this.scale = 1;
+    } else if (scrollTop >= stop) {
+      this.scale = 1.6  ;
+    }
   }
 }
 

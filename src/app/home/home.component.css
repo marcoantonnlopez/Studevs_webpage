@@ -176,3 +176,102 @@ letter-spacing: -2.4px;
     width: 36%;
 }
 
+/** ----------- SecThree ------------ */
+
+#secThree {
+    font-size: 200%;
+    background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1700991486/sec3_Background_w5n4wl.svg');
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    /* background-position: ; */
+    color: white;
+    width: 100%;
+    height: 110vh;
+    padding-top: 60px;
+    background-color: #0E091F;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* flex-wrap: wrap; */
+    text-align: center;
+    /* gap: 2rem; */
+    overflow: hidden;
+    /* gap: 05%; */
+}
+
+#secThree #sec31 {
+    height: 50%;
+}
+
+#secThree #sec32 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 02%;
+    overflow: hidden;
+}
+
+#secThree img {
+    /* width: 30%; */
+    width: 48%;
+    height: 63%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px ;
+}
+
+/* sec3 animation */
+/* .zoom {
+    position: sticky;
+    top: 20vh;
+    will-change: transform;
+    width: 100%;
+    transform: scale(2.2);
+  }
+  
+  .bottom {
+    height: 100vh;
+  }
+  
+  .top {
+    height: 80vh;
+  }
+  
+  .wrap {
+    height: 200vh;
+  } */
+  .zoom {
+    transition: transform 3.6s ease; /* Suaviza la transición de escala */
+    display: flex; /* Asegura que las imágenes estén alineadas */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra las imágenes verticalmente */
+  }
+  
+  .zoom img {
+    transition: transform 3.6s ease; /* Aplica una transición suave a las imágenes */
+    max-width: 100%; /* Asegúrate de que las imágenes no se desborden de su contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes al escalar */
+  }
+  
+  
+/** ----------- SecFour ------------ */
+
+#secFour {
+    width: 100%;
+    height: 110vh;
+    padding-top: 60px;
+    background-color: #0E091F;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* flex-wrap: wrap; */
+    text-align: center;
+    /* gap: 2rem; */
+    /* gap: 05%; */
+}
