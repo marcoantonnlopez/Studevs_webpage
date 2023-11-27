@@ -485,21 +485,21 @@ letter-spacing: -2.4px;
     color: #FFF;
     color: #FFF;
     font-family: Aileron;
-    font-size: 160px;
+    font-size: 850%;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-    letter-spacing: -11.2px;
+    letter-spacing: -10px;
 }
 
 #secSeven div p {
     color: #FFF;
-font-family: Aileron;
-font-size: 40px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: -2.8px;
+    font-family: Aileron;
+    font-size: 200%;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -2px;
 }
 
 
