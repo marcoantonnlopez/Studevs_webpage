@@ -227,9 +227,9 @@ letter-spacing: -2.4px;
 
   .zoom {
     transition: transform 3.6s ease; /* Suaviza la transición de escala */
-    display: flex; /* Asegura que las imágenes estén alineadas */
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center; /* Centra las imágenes verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
   }
   
   .zoom img {

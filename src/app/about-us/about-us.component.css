@@ -1,0 +1,54 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    background-color: #0E091F;
+}
+
+#secZero {
+    height: 15vh;
+    /* background: #0e091fd5; */
+    background: linear-gradient(180deg, #0E091F 0%, #0e091fd5 100%);
+    /* background: linear-gradient(180deg, #0E091F 0%, rgb(150, 150, 150) 100%); */
+}
+
+#secOne {
+    height: 200vh;
+    background: linear-gradient(180deg, rgb(150, 150, 150) 0%, #0e091fd7 50%, #0E091F 100%);
+}
+
+#secOne img {
+    width: 50%;
+    transition: transform 0.1s ease-in-out;
+}
+
+/* --- animations --- */
+#secOne img {
+    scale: 1.2;
+}
+
+.zoom {
+    position: sticky;
+    top: 20vh;
+    will-change: transform;
+    width: 100%;
+    transform: scale(2.2);
+  }
+  .bottom {
+    height: 100vh;
+  }
+  
+  .top {
+    height: 80vh;
+  }
+  
+  .wrap {
+    /* background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701140218/AboutUs/AboutUs_Letters_aerg4p.svg'); */
+
+    height: 200vh;
+  }
+  

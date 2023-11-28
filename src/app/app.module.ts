@@ -12,11 +12,11 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 // Share
 import { SocialMediaComponent } from './shared/social-media/social-media.component';
-import { StudevCardForHomeComponent } from './home/components/studev-card-for-home/studev-card-for-home.component';
 import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from './shared/animations/animations.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +29,9 @@ import { AnimationsComponent } from './shared/animations/animations.component';
     RegisterComponent,
     HomeComponent,
     SocialMediaComponent,
-    StudevCardForHomeComponent,
     BtnPrincipalComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

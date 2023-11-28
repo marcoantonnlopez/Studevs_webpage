@@ -21,10 +21,8 @@
         </div>
         <p>¿Are you passionate about <span><b> technology? </b></span></p>
         <app-btn-principal></app-btn-principal>
-        <!-- [routerLink]="['/register']" routerLinkActive="router-link-active"  -->
     </div>
     <div class="sec22 reveal fade-bottom">
-        <app-studev-card-for-home></app-studev-card-for-home>
         <div id="adminScroll">
             <div class="image-container adminsScroll">
                 <img *ngIf="adminScroll1" [src]="adminScroll1" alt="Descripción alternativa">
@@ -124,6 +122,8 @@
     </div>
     <app-btn-principal class="reveal fade-bottom"></app-btn-principal>
 </section>
+<app-footer></app-footer>
+
 <script>
     gsap.to(".box", { 
   x: 200,
