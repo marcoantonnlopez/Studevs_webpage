@@ -112,7 +112,7 @@ section {
     gap: 2rem;
 }
 
-#secFour p {
+.pCommon {
     color: #FFF;
     text-align: center;
     font-family: Aileron;
@@ -129,4 +129,24 @@ section {
 
 #secFour span {
     font-weight: 700;
+}
+
+/** ------- SecFive & secSix ------- */
+
+.commonSectionTemplate {
+    flex-direction: column;
+    padding: 0 10%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.commonSectionTemplate h2{
+    color: #FFF;
+    text-align: center;
+    font-family: Aileron;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -7px;
 }
