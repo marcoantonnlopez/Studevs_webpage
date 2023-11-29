@@ -11,22 +11,31 @@ section {
 
 #secZero {
     height: 15vh;
+    /* height: 0px; */
     /* background: #0e091fd5; */
-    background: linear-gradient(180deg, #0E091F 0%, #0e091fd5 100%);
+    /* background: linear-gradient(180deg, #0E091F 0%, #0e091fd5 100%); */
     /* background: linear-gradient(180deg, #0E091F 0%, rgb(150, 150, 150) 100%); */
 }
 
 #secOne {
-    height: 200vh;
-    background: linear-gradient(180deg, rgb(150, 150, 150) 0%, #0e091fd7 50%, #0E091F 100%);
+    height: 215vh;
+    background-image: 
+        linear-gradient(180deg, #fdfdfd44 0%, #0e091fd3 47%, #0E091F 90%),
+        url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701212885/AboutUs/avion_lta5z7.jpg');
+        /* url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1700992802/sec3_3_g5qjvs.svg'); */
+    background-size: cover; /* Asegúrate de que la imagen de fondo cubra todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+    overflow: hidden;
+    gap: 4rem;
 }
+
 
 #secOne img {
     width: 50%;
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.01s ease-in-out;
 }
 
-/* --- animations --- */
+/* --- animations Sec1 --- */
 #secOne img {
     scale: 1.2;
 }
@@ -47,8 +56,77 @@ section {
   }
   
   .wrap {
-    /* background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701140218/AboutUs/AboutUs_Letters_aerg4p.svg'); */
-
     height: 200vh;
   }
   
+
+/** ------- SecTwo ------- */
+
+#secTwo {
+    flex-direction: row;
+    padding: 0 10%;
+    flex-wrap: wrap;
+
+}
+
+#secTwo p {
+    color: #FFF;
+    font-family: Aileron;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.05px;
+    text-align: start;
+    width: 70%;
+}
+
+/** ------- SecThree ------- */
+
+#secThree {
+    flex-direction: row;
+    padding: 0 10%;
+    flex-wrap: wrap;
+
+}
+
+#secThree p {
+    color: #FFF;
+    font-family: Aileron;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.05px;
+    text-align: end;
+    width: 70%;
+}
+
+
+/** ------- SecFour ------- */
+
+#secFour {
+    flex-direction: column;
+    padding: 0 10%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#secFour p {
+    color: #FFF;
+    text-align: center;
+    font-family: Aileron;
+    font-size: 30px;
+    font-style: normal;
+    /* font-weight: 700; */
+    letter-spacing: -0.9px;
+    font-family: Aileron;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 70%;
+}
+
+#secFour span {
+    font-weight: 700;
+}

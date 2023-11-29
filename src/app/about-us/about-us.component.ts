@@ -4,23 +4,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.css']
+  styleUrls: ['./about-us.component.css', './../shared/animations/animations.component.css']
 })
 export class AboutUsComponent implements OnInit  {
   aboutUsLetter: string = ''; 
+  capi1: string = ''; 
+  studevsLogo: string = ''; 
   scale: number = 1; // Define la propiedad scale
 
   ngOnInit(): void {
     this.aboutUsLetter = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701140218/AboutUs/AboutUs_Letters_aerg4p.svg';
-  }
-
-  
-  ngAfterViewInit() {
-    window.addEventListener('scroll', () => this.onWindowScroll());
-  }
-
-  ngOnDestroy() {
-    window.removeEventListener('scroll', () => this.onWindowScroll());
+    this.capi1 = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701213737/capi_yf5t4l.svg';
+    this.studevsLogo = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1700630770/share/LogoNormal_ojrguh.svg';
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -29,7 +24,7 @@ export class AboutUsComponent implements OnInit  {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollRatio = scrollTop / scrollHeight;
 
-    this.scale = 1 + scrollRatio * 68;
+    this.scale = 1 + scrollRatio * 178;
 
   }
 

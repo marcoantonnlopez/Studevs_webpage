@@ -1,48 +1,52 @@
-<div id="secZero"></div>
 <section id="secOne">
+    <div id="secZero"></div>
     
     <div class="top"></div>
     <div class="wrap">
 
-        <!-- <img class="zoom zoom2" *ngIf="aboutUsLetter" [src]="aboutUsLetter" alt="Descripción alternativa"> -->
       <img class="zoom" *ngIf="aboutUsLetter" [src]="aboutUsLetter" [style.transform]="'scale(' + scale + ')'" alt="Descripción alternativa">
         
     </div>
     <div class="bottom"></div>
 </section>
-<!-- <section id="secOne">
-    <div class="wrap">
-      <img class="zoom" *ngIf="aboutUsLetter" [src]="aboutUsLetter" [style.transform]="'scale(' + scale + ')'" alt="Descripción alternativa">
-    </div>
-  </section> -->
-  
-  
 
 <section id="secTwo">
+    <p class="reveal fade-bottom">In the glorious kingdom of Ideas, Capy came to be,
+        With bravery and wisdom, he set the doubts free.</p>
+        <img class="reveal fade-bottom" *ngIf="capi1" [src]="capi1"  alt="Capi1">
 
 </section>
 
 <section id="secThree">
+    <p class="reveal fade-bottom">In every star of Studevs, with each new creation,
+        He vowed to embody its spirit, its dream, and its aspiration.</p>
 
 </section>
 
 <section id="secFour">
+    <img class="reveal fade-bottom" *ngIf="studevsLogo" [src]="studevsLogo"  alt="Capi1">
+    <!-- <p class="reveal fade-bottom"> Studevs es una comunidad de personas apasionadas por las ciencias de la computación, el diseño y otras áreas relacionadas con la tecnología e innovación.</p> -->
+    <p class="reveal fade-bottom"> Studevs is a community of <span> people passionate</span> for computer science, design, and other fields related with <span>technology and innovation</span>.</p>
+</section>
+
+<section id="secFive" class="commonSectionTemplate">
+    <h2 class="reveal fade-bottom">Misión</h2>
+    <p class="reveal fade-bottom"></p>
 
 </section>
 
-<script>
-    const zoom = document.querySelector('.zoom');
-    const minZoom = 1;
-    const maxZoom = 2;
+<section id="secSix" class="commonSectionTemplate">
+    <h2 class="reveal fade-bottom">Visión</h2>
+    <p class="reveal fade-bottom"></p>
 
-    addEventListener('scroll', e => {
-    	const vh = window.innerHeight / 100;
-      const scrollTop = document.documentElement.scrollTop;
-      const start = 100 * vh;
-      const stop = 100 * vh;
-      if (scrollTop > start && scrollTop < stop) {
-    	  const scale = Math.max(2.2 - (scrollTop - start) / 500, 1);
-      	zoom.style.transform = `scale(${scale})`
-      }
-})
-</script>
+</section>
+
+<section id="secSeven">
+
+</section>
+
+<section id="secEight">
+
+</section>
+
+<app-footer></app-footer>

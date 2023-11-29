@@ -1,6 +1,5 @@
 div {
     background-color: #0c061f;
-    ;
     padding: 20px 40px;
     text-align: center;
     font-size: 12px;
@@ -10,4 +9,5 @@ div {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
