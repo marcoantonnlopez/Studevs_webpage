@@ -195,3 +195,41 @@ section {
 .value img {
     height: 150px;
 }
+
+/** ------- SecEight ------- */
+#secEight {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
+    height: auto;
+    width: 100%;
+    padding: 10% 20%;
+    flex-wrap: wrap;
+}
+
+.sec81 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-self: space-evenly;
+    align-items: start;
+    gap: 3rem;
+}
+
+.sec81 h2 {
+    color: #FFF;
+    font-family: Aileron;
+    font-size: 6.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 77%; /* 115.5px */
+    letter-spacing: -10.5px;
+    text-align: start;
+    width: 70%;
+}
+
+#secEight img {
+    width: 50%;
+    /* position: relative; */
+    /* width: 60px; */
+}
