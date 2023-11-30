@@ -1,9 +1,9 @@
 const Router = require('express').Router;
-const { usersGet, usersPost, usersDelete, usersPut, usersPatch } = require('../controllers/users');
+const { usersGet, usersPost, usersDelete, usersPut, usersPatch, registerUser } = require('../controllers/users');
 
 const router = Router();
 
-// Rutas para manejar las solicitudes de usuarios
+router.post('/register', registerUser);
 router.get('/', usersGet);
 router.post('/', usersPost);
 router.delete('/', usersDelete);
