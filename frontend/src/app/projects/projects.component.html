@@ -1,1 +1,25 @@
-<p>projects works!</p>
+<section>
+    <div id="secOne">
+        <h1 [@fadeIn]>Projects</h1>
+        <app-add-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-add-btn>
+    </div>
+    <div id="allprojects">
+        <div class="projectsDiv">
+            <div class="projectsInfo">
+                <h2>All Projects</h2>
+                <p>See all the projects made by our Studevs</p>
+            </div>
+            <div class="projectsList">
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+                <app-project-icon></app-project-icon>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

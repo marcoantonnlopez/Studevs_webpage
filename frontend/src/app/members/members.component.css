@@ -1,9 +1,15 @@
 section {
     background-color: #0E091F;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 #secOne {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,12 +38,12 @@ letter-spacing: -10.5px;
 
 #allmembers {
     padding: 55px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 7rem;
 }
 
 .membersList {
