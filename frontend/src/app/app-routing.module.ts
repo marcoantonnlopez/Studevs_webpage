@@ -13,8 +13,8 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'membersPages/user', component: UserComponent, canActivate: [AuthGuard] },
-  // { path: 'user', component: UserComponent }
+  // { path: 'membersPages/user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: UserComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'events', component: EventsComponent },

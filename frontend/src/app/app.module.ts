@@ -23,6 +23,14 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MultiuseBtnComponent } from './shared/multiuse-btn/multiuse-btn.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './membersPages/user/user.component';
+import { ExternalUserComponent } from './membersPages/external-user/external-user.component';
+import { ProjectBigCardComponent } from './projectsComponents/project-big-card/project-big-card.component';
+import { ProjectIconComponent } from './projectsComponents/project-icon/project-icon.component';
+import { PastEventCardComponent } from './eventsComponents/past-event-card/past-event-card.component';
+import { FutureEventCardComponent } from './eventsComponents/future-event-card/future-event-card.component';
+import { EditBtnComponent } from './shared/edit-btn/edit-btn.component';
+import { AddBtnComponent } from './shared/add-btn/add-btn.component';
+import { StudevCardComponent } from './shared/studev-card/studev-card.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +48,15 @@ import { UserComponent } from './membersPages/user/user.component';
     FooterComponent,
     MultiuseBtnComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ExternalUserComponent,
+    ProjectBigCardComponent,
+    ProjectIconComponent,
+    PastEventCardComponent,
+    FutureEventCardComponent,
+    EditBtnComponent,
+    AddBtnComponent,
+    StudevCardComponent
   ],
   imports: [
     BrowserModule,

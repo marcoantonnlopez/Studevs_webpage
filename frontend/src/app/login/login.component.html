@@ -3,14 +3,14 @@
       <h1>Log In</h1>
         <form (ngSubmit)="onSubmit()">
             <div class="input">
-                <label for="email">Correo Electrónico:</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" [(ngModel)]="loginData.email" name="email" required>
             </div>
             <div class="input">
-                <label for="password">Contraseña:</label>
+                <label for="password">Password:</label>
                 <input type="password" id="password" [(ngModel)]="loginData.password" name="password" required>
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit">Log In</button>
             
             <p>Don't have an account? <span> <a routerLink="/register">Sign Up</a></span></p>
 

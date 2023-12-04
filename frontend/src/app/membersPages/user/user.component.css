@@ -1,0 +1,203 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: auto;
+    /* height: 100vh; */
+    /* background-color: #0E091F; */
+    background-image: linear-gradient(180deg, #040110 0%, #040110 15%, #0E091F 15.5%);
+    padding: 10% 15%;
+}
+
+#sec2 {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 3rem;
+    width: 100%;
+}
+
+#Info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 200px;
+
+}
+
+#Info img {
+    height: 200px;
+    width: 200px;
+    background-size: cover; 
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+#Info h1 {
+    color: #FFF;
+font-family: Aileron;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -3.5px;
+}
+
+#infoUserNameMember {
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+#infoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+}
+
+#infoUserNameMember .userType {
+    display: flex;
+width: 123px;
+height: 36px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 20px;
+background: #40CAFD;
+}
+
+#infoUserNameMember .user_name {
+    color: #FFF;
+font-family: Aileron;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+#phrase {
+    color: #FFF;
+    font-family: Aileron;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.61px;
+    width: 506px;
+    height: 29px;
+}
+
+#Description {
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 13px;
+}
+
+#Description h3 {
+    color: #FFF;
+font-family: Aileron;
+font-size: 33px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.31px;
+}
+
+#Description p {
+    color: #FFF;
+font-family: Aileron;
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1.61px;
+text-align: start;
+}
+
+/* -------- Projects -------- */
+#Projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #ffffff;
+}
+
+#Projects h2 {
+    color: #FFF;
+font-family: Aileron;
+font-size: 33px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.31px;
+}
+
+
+/* --------- Events --------- */
+#Events {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    gap: 2rem;
+}
+
+.InfoEventsSec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0rem;
+    width: 100%;
+
+}
+
+.InfoEventsSec h2 {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+.InfoEventsSec p {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.5px;
+}
+
+#Events #events {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 66px;
+    width: 100%;
+}

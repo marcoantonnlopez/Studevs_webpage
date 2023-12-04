@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UserComponent implements OnInit {
-  user: any; // Tipo según tu modelo de usuario
+  pic: string = '';
+  user: any; 
 
-  constructor(/* inyecta servicios si es necesario */) { }
+  constructor() { }
 
   ngOnInit(): void {
+    this.pic = 'https://res.cloudinary.com/dmhkvcej4/image/upload/v1701684455/Users/MarcoStudev_ryoci1.jpg';
     // Lógica para obtener la información del usuario
   }
 }

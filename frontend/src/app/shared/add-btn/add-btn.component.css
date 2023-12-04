@@ -1,0 +1,17 @@
+button {
+    margin: none;
+    padding: 10px 30px;
+    border: none;
+    background-color: #40CAFD;
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+    opacity: 50%;
+}
+
+button:hover {
+    opacity: 100%;
+    font-size: large;
+    font-weight: 700;
+    background-color: rgb(44, 189, 241);
+}

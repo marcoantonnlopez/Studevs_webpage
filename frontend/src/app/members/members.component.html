@@ -1,1 +1,48 @@
-<p>members works!</p>
+<section>
+    <div id="secOne">
+        <h1 [@fadeIn]>Members</h1>
+        <app-add-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-add-btn>
+    </div>
+    <div id="allmembers">
+        <div class="membersDiv">
+            <div class="membersInfo">
+                <h2>Admins</h2>
+            </div>
+            <div class="membersList">
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+            </div>
+        </div>
+        <div class="membersDiv">
+            <div class="membersInfo">
+                <h2>Members</h2>
+            </div>
+            <div class="membersList">
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+            </div>
+        </div>
+        <div class="membersDiv">
+            <div class="membersInfo">
+                <h2>Ex-admins</h2>
+            </div>
+            <div class="membersList">
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+                <app-studev-card></app-studev-card>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
