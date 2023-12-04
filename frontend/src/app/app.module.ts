@@ -10,6 +10,9 @@ import { MembersComponent } from './members/members.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 // Share
 import { SocialMediaComponent } from './shared/social-media/social-media.component';
 import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.component';
@@ -17,6 +20,9 @@ import { BtnPrincipalComponent } from './shared/btn-principal/btn-principal.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from './shared/animations/animations.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MultiuseBtnComponent } from './shared/multiuse-btn/multiuse-btn.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './membersPages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +37,18 @@ import { FooterComponent } from './shared/footer/footer.component';
     SocialMediaComponent,
     BtnPrincipalComponent,
     AnimationsComponent,
-    FooterComponent
+    FooterComponent,
+    MultiuseBtnComponent,
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CloudinaryModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule, //para validaciones de inputs
     BrowserAnimationsModule, //para animaciones
 
   ],
