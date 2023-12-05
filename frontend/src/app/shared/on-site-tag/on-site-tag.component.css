@@ -1,0 +1,15 @@
+
+#modality {
+    color: #FFF;
+        display: flex;
+    width: 65.844px;
+    height: 26px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    opacity: 0.8;
+    background: #0089B5;
+    }

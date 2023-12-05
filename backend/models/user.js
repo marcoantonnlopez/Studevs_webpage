@@ -10,7 +10,40 @@ const userSchema = new mongoose.Schema({
         enum: ['miembro', 'admin', 'exadmin'],
         default: 'miembro'
     }
-    // Agrega otros campos según sea necesario
+    ,
+    name: {
+        type: String, 
+        default: ''  
+    },
+    lastname: {
+        type: String, 
+        default: ''  
+    },
+    profilePhoto: {
+        type: String, 
+        default: ''  
+    },
+    coverPhoto: {
+        type: String, 
+        default: ''  
+    },
+    phrase: {
+        type: String, 
+        default: ''  
+    },
+    description: {
+        type: String, 
+        default: ''  
+    },
+    projects: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project'
+    }],
+    events: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Event'
+    }],
+
 });
 
 // Método para hashear la contraseña antes de guardarla
@@ -21,3 +54,17 @@ userSchema.pre('save', async function (next) {
 });
 
 module.exports = mongoose.model('User', userSchema);
+
+
+// *New LogIn
+
+// const mongoose = require('mongoose');
+
+// const userSchema = new mongoose.Schema({
+//   email: { type: String, required: true, unique: true },
+//   password: { type: String, required: true }
+// });
+
+// const User = mongoose.model('User', userSchema);
+
+// module.exports = User;

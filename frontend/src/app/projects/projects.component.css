@@ -1,0 +1,106 @@
+section {
+    background-color: #0E091F;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#secOne {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    background-color: #0E091F;
+    background-image: 
+        linear-gradient(180deg, #14141444 0%, #0e091fd3 70%, #0E091F 100%),
+        url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701720271/Projects/background_ig7x5s.svg');
+    background-size: cover; /* Asegúrate de que la imagen de fondo cubra todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+    position: top;
+    /* background-attachment: fixed; */
+    overflow: hidden;
+}
+
+#secOne h1 {
+    color: #FFF;
+font-family: Aileron;
+font-size: 150px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -10.5px;
+}
+
+#allprojects {
+    padding: 55px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+.projectsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+.projectsInfo {
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0rem;
+    width: 100%;    
+}
+
+.projectsInfo h2 {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+.projectsInfo p {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.5px;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 66px;
+    width: 100%;
+}

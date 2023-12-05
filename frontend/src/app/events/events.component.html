@@ -1,1 +1,43 @@
-<p>events works!</p>
+<section>
+    <div id="secOne">
+        <h1 [@fadeIn]>Events</h1>
+        <app-add-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-add-btn>
+    </div>
+    <div id="allEvents">
+        <div class="eventsDiv">
+            <div class="eventsInfo">
+                <h2>Future Events</h2>
+                <p>Join new events with studevs community</p>
+
+
+            </div>
+            <div class="eventsList">
+                <app-future-event-card></app-future-event-card>
+                <app-future-event-card></app-future-event-card>
+                <app-future-event-card></app-future-event-card>
+                <app-future-event-card></app-future-event-card>
+            </div>
+        </div>
+        <div class="eventsDiv">
+            <div class="eventsInfo">
+                <h2>Past Events</h2>
+                <p>Relive all our past events</p>
+            </div>
+            <div class="eventsList">
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+                <app-past-event-card></app-past-event-card>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

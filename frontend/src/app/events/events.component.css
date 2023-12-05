@@ -1,0 +1,104 @@
+section {
+    background-color: #0E091F;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#secOne {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+    background-color: #0E091F;
+    background-image: 
+        linear-gradient(180deg, #05050500 0%, #0e091fd3 77%, #0E091F 100%),
+        url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701709559/Events/Fondo_gpnnh1.svg');
+    background-size: cover; /* Asegúrate de que la imagen de fondo cubra todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+    overflow: hidden;
+}
+
+#secOne h1 {
+    color: #FFF;
+font-family: Aileron;
+font-size: 150px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -10.5px;
+}
+
+#allEvents {
+    padding: 55px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.eventsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+.eventsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+.eventsInfo {
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0rem;
+    width: 100%;    
+}
+
+.eventsInfo h2 {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+.eventsInfo p {
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.5px;
+}
+
+.eventsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 66px;
+    width: 100%;
+}

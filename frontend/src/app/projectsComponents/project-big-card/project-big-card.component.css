@@ -1,0 +1,84 @@
+.card {
+    width: 100%;
+    height: autp;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 37px;
+    transition: all 0.3s ease-in-out;
+    background: #0E091F;
+    color: white;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    border: none;
+
+}
+
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: start;
+}
+
+.mainInfo {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 0;
+}
+
+#ProjectName {
+    color: #FFF;
+font-family: Aileron;
+font-size: 33px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.31px;
+}
+
+#EventName {
+    color: #FFF;
+font-family: Aileron;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1.75px;
+}
+
+#description {
+    color: #FFF;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+.Skills {
+    display: flex;
+align-items: flex-start;
+gap: 17px;
+}
+
+.skill {
+    display: flex;
+width: 78px;
+height: 30px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 20px;
+background-color: #40CAFD;
+color: #0E091F;
+}

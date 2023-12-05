@@ -1,0 +1,119 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    background-color: #0E091F;
+    background-image: 
+        linear-gradient(180deg, #0e091fbb 0%, #0e091fd3 47%, #0e091fc4 90%),
+        url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701320937/register/bg_oatqph.svg');
+        background-size: cover; 
+    background-position: center; 
+    overflow: hidden;
+    
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    color: #2b2b2b;
+    height: 85vh;
+    width: 500px;
+    background-color: #e4e4e4;
+    border-radius: 30px;
+}
+
+h1 {
+    
+    color: #0E091F;
+    text-align: center;
+    font-family: Aileron;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -7px;
+}
+
+form {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+label {
+    font-weight: 700;
+}
+
+input {
+    height: 40px;
+    width: 350px;
+    border-radius: 10px;
+    border: #0E091F;
+    padding-left: 10px;
+    color: #424242;
+}
+
+input:focus {
+    border: 2px solid #40CAFD; 
+    outline: none; 
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    text-align: center;
+}
+
+.input div {
+    color: rgb(197, 2, 2);
+    font-size: 13px;
+}
+
+app-multiuse-btn {
+    width: 70%;
+}
+
+button {
+    width: 70%;
+    height: 40px;
+    background-color: #40CAFD;
+    color: #3A3A3A;
+    border-radius: 10px;
+    border: none;
+
+    color: #3A3A3A;
+    text-align: center;
+    font-family: Aileron;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -1.5px;
+    transition: 0.5s ease;
+    
+}
+
+button:hover {
+    background-color: #0eb5f1;
+    
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

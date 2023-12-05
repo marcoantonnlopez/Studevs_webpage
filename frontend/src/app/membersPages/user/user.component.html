@@ -1,0 +1,66 @@
+<!-- <div *ngIf="user">
+    <h2>Perfil del Usuario</h2>
+    <p>Nombre: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+  </div> -->
+
+  <div class="secZero">
+    <div id="Info">
+      <div id="infoPic">
+        <img id="ProfilePhoto" *ngIf="pic" [src]="pic" alt="pic">
+        
+      </div>
+      <div id="infoInfo">
+        <div class="aux">
+          <h1 id="name">Marco López</h1>
+          <app-edit-btn [routerLink]="miRuta" [buttonText]="miTexto"></app-edit-btn>
+        </div>
+        <div id="infoUserNameMember">
+          <p class="user_name">@marco_antonn</p>
+          <p class="userType">Admin</p>
+        </div>
+        <p id="phrase">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, rerum."</p>
+  
+      </div>
+    </div>
+
+  </div>
+  <section>
+    <div id="sec2">
+      <div id="Description">
+        <h3>Description</h3>
+        <p id="description">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis tenetur odio eveniet dignissimos officia veniam?"</p>
+      </div>
+
+      <div id="Projects">
+        <h2>Projects</h2>
+        <hr>
+        <app-project-big-card></app-project-big-card>
+        <app-project-big-card></app-project-big-card>
+        <app-project-big-card></app-project-big-card>
+      </div>
+
+      <div id="Events">
+        <div class="InfoEventsSec">
+          <h2>Events</h2>
+          <p>Events <span class="user_name"> @user_name </span>has participated</p>
+        </div>
+        <div id="events">
+          <app-future-event-card></app-future-event-card>
+          <app-future-event-card></app-future-event-card>
+          <app-future-event-card></app-future-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+          <app-past-event-card></app-past-event-card>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <app-footer></app-footer>

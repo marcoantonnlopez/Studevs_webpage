@@ -1,0 +1,44 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: rgb(126, 126, 126);
+    gap: 8px;
+    transition: 0.5s ease;
+}
+
+img:hover {
+    scale: 1.1;
+    fill: #D9D9D9;
+filter: drop-shadow(0px 0px 20px rgba(64, 202, 253, 0.50));
+}
+
+h1 {
+    margin-top: 15px;
+    color: #FFF;
+font-family: Aileron;
+font-size: 33px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.31px;
+}
+
+p {
+    color: #FFF;
+font-family: Aileron;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1.75px;
+}

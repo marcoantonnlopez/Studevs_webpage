@@ -1,0 +1,16 @@
+button {
+    border: none;
+    background-color: rgb(143, 143, 143);
+    color: rgb(39, 39, 39);
+    opacity: 80%;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    font-weight: 700;
+    opacity: 100%;
+    background-color: rgb(189, 189, 189);
+}
