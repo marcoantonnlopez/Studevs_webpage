@@ -37,31 +37,35 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const loginUser = async (req, res) => {
-    try {
-        const { username, password } = req.body;
+  console.log('Datos recibidos:', req.body);
+  try {
+      const { password, email } = req.body; // Cambiar 'username' por 'email'
 
-        // Buscar al usuario por nombre de usuario
-        const user = await User.findOne({ username });
-        if (!user) {
-            return res.status(400).json({ message: 'Usuario no encontrado' });
-        }
+      // Buscar al usuario por correo electrónico
+      const user = await User.findOne({ email }); // Asegúrate de que tu modelo User tenga un campo 'email'
+      if (!user) {
+          return res.status(400).json({ message: 'Usuario no encontrado' });
+      }
 
-        // Verificar la contraseña
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: 'Contraseña incorrecta' });
-        }
+      // Verificar la contraseña
+      const isMatch = await bcrypt.compare(password, user.password);
+      console.log('entra a comparar');
+      if (!isMatch) {
+        console.log('Contraseñaaa incorrecta');
+          return res.status(400).json({ message: 'Contraseña es incorrecta' });
+      }
+      console.log('Contraseñaaa NOO incorrecta');
 
-        // Generar token JWT usando la clave secreta de las variables de entorno
-        // const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      // Generar token JWT usando la clave secreta de las variables de entorno
+      const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-        // Generar token JWT
-        res.json({ message: 'Inicio de sesión exitoso', token });
-    } catch (error) {
-        res.status(500).json({ message: 'Error al iniciar sesión', error });
-    }
+      // Generar token JWT
+      res.json({ message: 'Inicio de sesión exitoso', token });
+  } catch (error) {
+      res.status(500).json({ message: 'Error al iniciar sesión', error });
+  }
 };
+
 
 module.exports = { loginUser };
 

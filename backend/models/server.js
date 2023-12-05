@@ -9,7 +9,6 @@ class Server {
 
         this.usersPath = "/api/users";
         this.authPath = '/api/auth';
-        // this.authPath = "/api/auth/login";
 
         this.middlewares();
         this.routes();
@@ -21,12 +20,11 @@ class Server {
         this.app.use(cors());
     }
     db() {
-        const dbUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/studedvsWebDB";
-        mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+        const dbUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/studevsWebDB";
+        mongoose.connect(dbUri)
             .then(() => console.log("Conexión exitosa a MongoDB"))
             .catch(error => console.error("Error al conectar con la base de datos", error));
     }
-    
 
     routes() {
         this.app.use(this.usersPath, require("../routes/users"));

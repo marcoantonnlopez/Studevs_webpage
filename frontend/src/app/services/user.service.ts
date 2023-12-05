@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { tap, switchMap, catchError } from 'rxjs/operators';
 
 interface User {
-  // Define los campos que esperas del usuario
   username: string;
   password: string;
   email?: string;
@@ -19,7 +18,7 @@ interface AuthResponse {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8081/api/users'; // Ajusta según tu configuración
+  private Url = 'http://localhost:8081/api/users'; // Ajusta según tu configuración
 
   constructor(private http: HttpClient) {}
 
@@ -28,8 +27,11 @@ export class UserService {
     return throwError(error.error.message || 'Error del servidor');
   }
 
-  register(user: User): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/register`, user).pipe(
+  // signUp(userData: LoginData): Observable<any> {
+  //   return this.http.post<any>(this.Url + '/login', userData);
+  // }
+  signUp(user: User): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.Url}/register`, user).pipe(
       catchError(this.handleError)
     );
   }
@@ -43,7 +45,7 @@ export class UserService {
   }
 
   registerAndLogin(user: User): Observable<AuthResponse> {
-    return this.register(user).pipe(
+    return this.signUp(user).pipe(
       switchMap(_ => this.login({ username: user.username, password: user.password })),
       catchError(this.handleError)
     );

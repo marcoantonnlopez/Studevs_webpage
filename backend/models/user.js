@@ -23,10 +23,6 @@ const userSchema = new mongoose.Schema({
         type: String, 
         default: ''  
     },
-    coverPhoto: {
-        type: String, 
-        default: ''  
-    },
     phrase: {
         type: String, 
         default: ''  

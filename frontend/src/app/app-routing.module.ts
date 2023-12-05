@@ -14,15 +14,16 @@ import { ProjectComponent } from './projectsPages/project/project.component';
 
 const routes: Routes = [
   // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: 'membersPages/user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'members', component: MembersComponent },
   { path: 'projects', component: ProjectsComponent },
+  // Sesión
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // En solitrario
   { path: 'user', component: UserComponent },
   { path: 'event', component: EventComponent },
