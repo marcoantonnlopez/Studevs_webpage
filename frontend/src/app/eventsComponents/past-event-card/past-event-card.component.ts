@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-past-event-card',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./past-event-card.component.css']
 })
 export class PastEventCardComponent {
+  constructor(private router: Router) {}
 
+  goToEvent() {
+    this.router.navigate(['/event']);
+  }
 }

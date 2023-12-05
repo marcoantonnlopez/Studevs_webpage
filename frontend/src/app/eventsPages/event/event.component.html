@@ -1,73 +1,34 @@
 <div id="secOne">
-    <app-edit-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-edit-btn>
+    <img src="https://res.cloudinary.com/dmhkvcej4/image/upload/v1701709559/Events/Fondo_gpnnh1.svg" alt="">
+    <div class="capa-negra"></div>
 </div>
 <section>
     <div id="secTwo">
         <div id="sec2_1">
-            <app-project-big-card></app-project-big-card>
-            <div class="projectInfo">
+            <div class="aux">
+                <h1 id="eventName">Event name</h1> 
 
             </div>
+            <p> Date: <span id="date"></span></p>
+            <p><span id="nAssistants">100</span> assistants</p> 
+            <p>Location: <span id="Location"></span></p>
         </div>
+        <hr>
         <div id="sec2_2">
             <div class="descripDiv">
                 <h2>Description</h2>
                 <p id="description" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque doloribus obcaecati enim eius consequuntur velit maiores iure unde voluptatem, est a similique consectetur sequi veritatis commodi distinctio eum deserunt!</p>
             </div>
-            <div class="event">
-                <app-past-event-card></app-past-event-card>
-            </div>
         </div>
         <hr>
         <div id="sec2_3">
-            <h2>Watch a video. <span> See the project in action</span></h2>
+            <h2>Watch a video. <span> Relieve the experience</span></h2>
             <iframe src="https://www.youtube.com/embed/[ID_DEL_VIDEO]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            <div class="links">
-                <a href="" id="gitHubLink">GitHub</a>
-                <a href="" id="addLink">Additional Link</a>
-            </div>
         </div>
 
         <hr>
-
-        <div id="sec2_4">
-            <div class="projectInfo">
-                <h3>Inspiration</h3>
-                <p id="Inspiration">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-            <div class="projectInfo">
-                <h3>What Does It Does</h3>
-                <p id="WhatDoesItDoes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-            <div class="projectInfo">
-                <h3>How We Build It</h3>
-                <p id="HowWeBuildIt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-            <div class="projectInfo">
-                <h3>Challenges We Ran Into</h3>
-                <p id="ChallengesWeRanInto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-            <div class="projectInfo">
-                <h3>What We Learned</h3>
-                <p id="WhatWeLearned">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-            <div class="projectInfo">
-                <h3>Next Steps</h3>
-                <p id="NextSteps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
-            </div>
-        </div>
-        <hr>
-        <div id="sec2_5">
-            <h2>Team members</h2>
-            <div id="teamMembers">
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-            </div>
-
-        </div>
+        
     </div>
 </section>
 <app-footer></app-footer>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-icon',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-icon.component.css']
 })
 export class ProjectIconComponent {
+  constructor(private router: Router) {}
 
+  goToProject() {
+    this.router.navigate(['/project']);
+  }
 }

@@ -10,6 +10,7 @@ import { UserComponent } from './membersPages/user/user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { EventComponent } from './eventsPages/event/event.component';
+import { ProjectComponent } from './projectsPages/project/project.component';
 
 const routes: Routes = [
   // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   // En solitrario
   { path: 'user', component: UserComponent },
-  { path: 'event', component: EventComponent }
+  { path: 'event', component: EventComponent },
+  { path: 'project', component: ProjectComponent }
 
 ];
 

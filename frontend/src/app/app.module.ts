@@ -32,6 +32,9 @@ import { EditBtnComponent } from './shared/edit-btn/edit-btn.component';
 import { AddBtnComponent } from './shared/add-btn/add-btn.component';
 import { StudevCardComponent } from './shared/studev-card/studev-card.component';
 import { EventComponent } from './eventsPages/event/event.component';
+import { ProjectComponent } from './projectsPages/project/project.component';
+import { OnSiteTagComponent } from './shared/on-site-tag/on-site-tag.component';
+import { OnLineTagComponent } from './shared/on-line-tag/on-line-tag.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { EventComponent } from './eventsPages/event/event.component';
     EditBtnComponent,
     AddBtnComponent,
     StudevCardComponent,
-    EventComponent
+    EventComponent,
+    ProjectComponent,
+    OnSiteTagComponent,
+    OnLineTagComponent
   ],
   imports: [
     BrowserModule,
