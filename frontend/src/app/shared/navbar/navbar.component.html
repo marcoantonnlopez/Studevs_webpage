@@ -14,10 +14,18 @@
       <li class="nav-item"><a class="nav-link" routerLink="/events">Events</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/members">Members</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/projects">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/user">Admin</a></li>
-      <li>
-        <a  class="ov-btn-grow-ellipse" href="" routerLink="/register">Join Studevs</a>
-      </li>
+      <ng-container *ngIf="!userService.loggedIn(); else loggedIn">
+        <li>
+          <a  class="ov-btn-grow-ellipse" href="" routerLink="/register">Join Studevs</a>
+        </li>
+      </ng-container>
+      
+      <ng-template #loggedIn>
+        <li class="nav-item"><a class="nav-link" routerLink="/user">User</a></li>
+        <li class="nav-item" >
+          <a class="nav-link" id="Logout" (click)="userService.logout()">Logout</a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>

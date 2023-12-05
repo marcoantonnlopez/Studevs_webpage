@@ -11,7 +11,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 // Share
 import { SocialMediaComponent } from './shared/social-media/social-media.component';
@@ -38,7 +38,7 @@ import { OnLineTagComponent } from './shared/on-line-tag/on-line-tag.component';
 
 // Auth
 import { AuthGuard } from './guards/auth.guard';
-
+import { TokenInterceptorService } from './services/token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +80,12 @@ import { AuthGuard } from './guards/auth.guard';
 
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true //para que no se sobreescriba el interceptor
+    }
   ],
   bootstrap: [AppComponent]
 })

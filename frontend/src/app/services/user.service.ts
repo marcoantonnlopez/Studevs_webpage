@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap, switchMap, catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 interface User {
   username: string;
@@ -20,7 +21,7 @@ interface AuthResponse {
 export class UserService {
   private Url = 'http://localhost:8081/api/users'; // Ajusta según tu configuración
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   private handleError(error: HttpErrorResponse) {
     // Aquí podrías manejar diferentes tipos de errores
@@ -55,6 +56,15 @@ export class UserService {
   // Verificar si está loggeado el usuario
   loggedIn(): Boolean {
     return !!localStorage.getItem('token'); //devuelve un true si hay token y false si noo
+  }
+
+  getToken() { //se usa en token interceptor
+    return localStorage.getItem('token');
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 }
