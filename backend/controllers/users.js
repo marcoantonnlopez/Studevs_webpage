@@ -2,7 +2,7 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Función para registrar un nuevo usuario
+// Función para registrar un nuevo usuario 
 const registerUser = async (req, res) => {
     try {
         const { username, password, email, userType } = req.body;
@@ -20,6 +20,7 @@ const registerUser = async (req, res) => {
         const newUser = new User({
             username,
             password: hashedPassword,
+            // password,
             email,
             userType
         });
@@ -79,7 +80,6 @@ const usersPatch = async (req, res) => {
 };
 
 module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch };
-//  //module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch };
 
 // *New LogIn
 

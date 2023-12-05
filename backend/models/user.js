@@ -43,11 +43,11 @@ const userSchema = new mongoose.Schema({
 });
 
 // Método para hashear la contraseña antes de guardarla
-userSchema.pre('save', async function (next) {
-    if (!this.isModified('password')) return next();
-    this.password = await bcrypt.hash(this.password, 12);
-    next();
-});
+// userSchema.pre('save', async function (next) {
+//     if (!this.isModified('password')) return next();
+//     this.password = await bcrypt.hash(this.password, 12);
+//     next();
+// });
 
 module.exports = mongoose.model('User', userSchema);
 

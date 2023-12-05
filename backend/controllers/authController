@@ -48,12 +48,26 @@ const loginUser = async (req, res) => {
       }
 
       // Verificar la contraseña
+      console.log('Contraseña en texto plano:', password);
+      console.log('Contraseña almacenada:', user.password);
+      
+      // Hashear la contraseña en texto plano para ver el resultado (solo para propósitos de depuración)
+      // const hashedPasswordForDebug = await bcrypt.hash(password, 12);
+      // console.log('Hasheo manual de la contraseña para depuración:', hashedPasswordForDebug);
+
       const isMatch = await bcrypt.compare(password, user.password);
-      console.log('entra a comparar');
+
+      console.log('Resultado de la comparación:', isMatch);
+      
       if (!isMatch) {
-        console.log('Contraseñaaa incorrecta');
+        // console.log('Contraseñaaa incorrecta' + hashedPassword + ' ' + user.password);
           return res.status(400).json({ message: 'Contraseña es incorrecta' });
       }
+
+      // Comparar las contraseñas en texto plano
+    //   if (password !== user.password) {
+    //     return res.status(400).json({ message: 'Contraseña es incorrecta' });
+    // }
       console.log('Contraseñaaa NOO incorrecta');
 
       // Generar token JWT usando la clave secreta de las variables de entorno
