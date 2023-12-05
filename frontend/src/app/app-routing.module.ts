@@ -21,11 +21,11 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'members', component: MembersComponent },
   { path: 'projects', component: ProjectsComponent },
-  // Sesión
+  // Login Signup
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // En solitrario
-  { path: 'user', component: UserComponent },
+  // Loggeado
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'event', component: EventComponent },
   { path: 'project', component: ProjectComponent }
 

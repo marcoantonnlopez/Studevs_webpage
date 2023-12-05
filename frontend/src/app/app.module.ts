@@ -36,6 +36,9 @@ import { ProjectComponent } from './projectsPages/project/project.component';
 import { OnSiteTagComponent } from './shared/on-site-tag/on-site-tag.component';
 import { OnLineTagComponent } from './shared/on-line-tag/on-line-tag.component';
 
+// Auth
+import { AuthGuard } from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +79,9 @@ import { OnLineTagComponent } from './shared/on-line-tag/on-line-tag.component';
     BrowserAnimationsModule, //para animaciones
 
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

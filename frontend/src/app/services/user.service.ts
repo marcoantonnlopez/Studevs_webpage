@@ -36,6 +36,7 @@ export class UserService {
     );
   }
 
+  // *Por si acaso
   login(credentials: { username: string; password: string }): Observable<AuthResponse> {
     return this.http.post<AuthResponse>('http://localhost:8081/api/auth/login', credentials)
         .pipe(
@@ -50,6 +51,10 @@ export class UserService {
       catchError(this.handleError)
     );
   }
-}
 
-// *new back
+  // Verificar si está loggeado el usuario
+  loggedIn(): Boolean {
+    return !!localStorage.getItem('token'); //devuelve un true si hay token y false si noo
+  }
+
+}
