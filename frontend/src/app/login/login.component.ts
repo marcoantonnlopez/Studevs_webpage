@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
 // import { AuthService } from '../auth.service';
 import { AuthService } from '../services/auth.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      state('void', style({ opacity: 0 })),
+      state('*', style({ opacity: 1 })),
+      transition(':enter', [
+        animate('1s ease-in')
+      ])
+    ])
+  ]
 })
 export class LoginComponent {
   loginData = {

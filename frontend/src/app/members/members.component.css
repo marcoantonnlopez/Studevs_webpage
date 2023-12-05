@@ -17,7 +17,7 @@ section {
     height: 65vh;
     background-color: #0E091F;
     background-image: 
-        linear-gradient(180deg, #fdfdfd44 0%, #0e091fd3 70%, #0E091F 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.363) 0%, #0e091fd3 70%, #0E091F 100%),
         url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701717988/Members/background_ge48gq.svg');
     background-size: cover; /* Asegúrate de que la imagen de fondo cubra todo el elemento */
     background-position: center; /* Centra la imagen de fondo */

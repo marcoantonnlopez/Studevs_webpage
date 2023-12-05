@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
   pic: string = '';
   user: any; 
+  
+  miRuta: string = '/user';
+  miTexto: string = 'Edit profile';
 
   constructor() { }
 

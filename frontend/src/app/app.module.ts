@@ -31,6 +31,7 @@ import { FutureEventCardComponent } from './eventsComponents/future-event-card/f
 import { EditBtnComponent } from './shared/edit-btn/edit-btn.component';
 import { AddBtnComponent } from './shared/add-btn/add-btn.component';
 import { StudevCardComponent } from './shared/studev-card/studev-card.component';
+import { EventComponent } from './eventsPages/event/event.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { StudevCardComponent } from './shared/studev-card/studev-card.component'
     FutureEventCardComponent,
     EditBtnComponent,
     AddBtnComponent,
-    StudevCardComponent
+    StudevCardComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
