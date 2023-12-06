@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-project-icon',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./project-icon.component.css']
 })
 export class ProjectIconComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public userService: UserService) {}
 
   goToProject() {
     this.router.navigate(['/project']);

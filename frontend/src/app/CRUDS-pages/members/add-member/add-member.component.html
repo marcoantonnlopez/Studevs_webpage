@@ -1,0 +1,76 @@
+<!-- add-member.component.html -->
+<section>
+    <div class="container  aux">
+        <h2 class="mb-3">Add New Member</h2>
+         <!-- Mensaje de éxito -->
+         <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+
+        <!-- Mensaje de error -->
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+    <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="newUser.username" name="username" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="newUser.email" name="email" required>
+    </div>
+  
+    <div class="mb-3">
+        <label for="userType" class="form-label">User Type:</label>
+        <select class="form-select" id="userType" [(ngModel)]="newUser.userType" name="userType">
+            <option value="miembro">Member</option>
+            <option value="admin">Admin</option>
+            <option value="exadmin">Ex-Admin</option>
+        </select>
+    </div>
+    
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newUser.name" name="name" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="newUser.lastName" name="lastName" required>
+      </div>
+  
+      <div class="mb-3">
+          <label for="profilePhoto" class="form-label">Profile Photo URL:</label>
+        <input type="text" class="form-control" id="profilePhoto" [(ngModel)]="newUser.profilePhoto" name="profilePhoto">
+      </div>
+  
+      <div class="mb-3">
+        <label for="phrase" class="form-label">Phrase:</label>
+        <input type="text" class="form-control" id="phrase" [(ngModel)]="newUser.phrase" name="phrase">
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea class="form-control" id="description" rows="3" [(ngModel)]="newUser.description" name="description"></textarea>
+      </div>
+  
+      <!-- Omitiendo Projects y Events por su complejidad adicional -->
+  
+      <button type="submit" class="btn btn-primary">Add Member</button>
+    </form> <br>
+     <!-- Mensaje de éxito -->
+     <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+    </div>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+  </div>  
+  <br>
+</section>
+<app-footer></app-footer>

@@ -1,1 +1,6 @@
 <img src="" alt="" (click)="goToProject()">
+<ng-container *ngIf="userService.loggedIn()">
+    <app-crud-btns></app-crud-btns>
+</ng-container>
+
+

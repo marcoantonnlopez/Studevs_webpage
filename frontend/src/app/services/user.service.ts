@@ -19,14 +19,15 @@ interface AuthResponse {
   providedIn: 'root'
 })
 export class UserService {
-  private Url = 'http://localhost:8081/api/users'; // Ajusta según tu configuración
+  private Url = 'http://localhost:8081/api/users'; 
 
   constructor(private http: HttpClient, private router: Router) {}
 
   private handleError(error: HttpErrorResponse) {
-    // Aquí podrías manejar diferentes tipos de errores
     return throwError(error.error.message || 'Error del servidor');
   }
+
+  // * ----- FUNCIONES PARA INICIAR SESIÓN Y MANTENERLA ----- 
 
   // signUp(userData: LoginData): Observable<any> {
   //   return this.http.post<any>(this.Url + '/login', userData);
@@ -46,6 +47,7 @@ export class UserService {
         );
   }
 
+  // *Por si acaso
   registerAndLogin(user: User): Observable<AuthResponse> {
     return this.signUp(user).pipe(
       switchMap(_ => this.login({ username: user.username, password: user.password })),
@@ -67,4 +69,8 @@ export class UserService {
     this.router.navigate(['/login']);
   }
 
+  // * ------ Add member -----
+  addUser(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.Url}/register`, userData);
+  }
 }

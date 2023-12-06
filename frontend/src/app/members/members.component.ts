@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-members',
@@ -16,7 +17,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class MembersComponent {
-  miRuta: string = '/user';
+  miRuta: string = '/add-member';
   miTexto: string = '+ Add a member';
+
+  constructor(public userService: UserService) {}
+
 
 }

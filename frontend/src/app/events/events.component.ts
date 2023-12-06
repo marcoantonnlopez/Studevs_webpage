@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-events',
@@ -16,6 +17,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class EventsComponent {
-  miRuta: string = '/user';
+  miRuta: string = '/add-event';
   miTexto: string = '+ Create an event';
+
+  constructor(public userService: UserService) {}
+
 }

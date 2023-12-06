@@ -55,39 +55,5 @@ export class RegisterComponent implements OnInit {
       )
     console.log(this.user);
   }
-  //? ----- new SignUP LogIn ----
-
-
-  // onSubmit() {
-  //   if (this.registerForm.valid) {
-  //     this.userService.register(this.registerForm.value).subscribe({
-  //       next: _ => {
-  //         // Después de un registro exitoso, inicia sesión automáticamente
-  //         const loginCredentials = {
-  //           username: this.registerForm.value.username,
-  //           password: this.registerForm.value.password
-  //         };
-  //         this.userService.login(loginCredentials).subscribe({
-  //           next: _ => {
-  //             // Navegación a la página del usuario después de un inicio de sesión exitoso
-  //             this.router.navigate(['/membersPages/user']);
-  //           },
-  //           error: error => {
-  //             // Manejo de errores durante el inicio de sesión
-  //             this.errorMessage = error.error?.message || 'Error en el inicio de sesión';
-  //             console.error('Error en el inicio de sesión', error);
-  //           }
-  //         });
-  //       },
-  //       error: error => {
-  //         // Manejo de errores durante el registro
-  //         this.errorMessage = error.error?.message || 'Error en el registro';
-  //         console.error('Error en el registro', error);
-  //       }
-  //     });
-  //   } else {
-  //     console.log('Formulario no es válido');
-  //   }
-  // }
 
 }

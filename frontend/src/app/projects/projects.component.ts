@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,7 +17,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class ProjectsComponent {
-  miRuta: string = '/user';
+  miRuta: string = '/add-project';
   miTexto: string = '+ Add a project';
+
+  constructor(public userService: UserService) {}
 
 }

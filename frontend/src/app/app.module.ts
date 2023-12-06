@@ -39,6 +39,21 @@ import { OnLineTagComponent } from './shared/on-line-tag/on-line-tag.component';
 // Auth
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { DeleteBtnComponent } from './shared/delete-btn/delete-btn.component';
+import { CRUDBtnsComponent } from './shared/crud-btns/crud-btns.component';
+import { AddMemberComponent } from './CRUDS-pages/members/add-member/add-member.component';
+import { EditMemberComponent } from './CRUDS-pages/members/edit-member/edit-member.component';
+import { EditEventComponent } from './CRUDS-pages/events/edit-event/edit-event.component';
+import { AddEventComponent } from './CRUDS-pages/events/add-event/add-event.component';
+import { AddProjectComponent } from './CRUDS-pages/projects/add-project/add-project.component';
+import { EditProjectComponent } from './CRUDS-pages/projects/edit-project/edit-project.component';
+
+// Services
+import { UserService } from './services/user.service';
+import { EventService } from './services/event.service';
+import { ProjectService } from './services/project.service';
+import { MemberService } from './services/member.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +82,15 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     EventComponent,
     ProjectComponent,
     OnSiteTagComponent,
-    OnLineTagComponent
+    OnLineTagComponent,
+    DeleteBtnComponent,
+    CRUDBtnsComponent,
+    AddMemberComponent,
+    EditMemberComponent,
+    EditEventComponent,
+    AddEventComponent,
+    AddProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +108,11 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true //para que no se sobreescriba el interceptor
-    }
+    },
+    UserService,
+    EventService,
+    ProjectService,
+    MemberService
   ],
   bootstrap: [AppComponent]
 })

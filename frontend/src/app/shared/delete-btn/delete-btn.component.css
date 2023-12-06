@@ -1,0 +1,21 @@
+button {
+    border: none;
+    background-color: rgb(207, 207, 207);
+    color: red;
+    opacity: 80%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.5s ease;
+    /* opacity: 70%;
+    backdrop-filter: blur(10px); */
+}
+
+button:hover {
+    font-weight: 700;
+    opacity: 100%;
+    background-color: rgb(189, 189, 189);
+    background-color: red;
+    color: white;
+    font-weight: 500;
+}

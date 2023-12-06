@@ -5,3 +5,6 @@
         <p id="eventDate">Dec 15, 2023</p>
     </div>
 </div>
+<ng-container *ngIf="userService.loggedIn()">
+    <app-crud-btns></app-crud-btns>
+</ng-container>
