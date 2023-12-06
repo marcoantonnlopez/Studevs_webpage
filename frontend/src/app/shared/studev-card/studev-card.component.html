@@ -3,3 +3,9 @@
     <h1 id="name">User Name</h1>
     <p id="userType">Member</p>
 </div>
+<ng-container *ngIf="userService.loggedIn()">
+    <app-crud-btns 
+        [miRutaEdit]="'/edit/' + miIdEspecifico" 
+        [miRutaDelete]="'/delete/' + miIdEspecifico">
+    </app-crud-btns>
+</ng-container>

@@ -2,7 +2,7 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Función para registrar un nuevo usuario
+// Función para registrar un nuevo usuario 
 const registerUser = async (req, res) => {
     try {
         const { username, password, email, userType } = req.body;
@@ -20,6 +20,7 @@ const registerUser = async (req, res) => {
         const newUser = new User({
             username,
             password: hashedPassword,
+            // password,
             email,
             userType
         });
@@ -79,58 +80,3 @@ const usersPatch = async (req, res) => {
 };
 
 module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch };
-//  //module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch };
-
-// *New LogIn
-
-// const User = require('../models/user'); // Asegúrate de que la ruta al modelo de usuario sea correcta
-// const bcrypt = require('bcryptjs');
-
-// // Registro de un nuevo usuario
-// exports.registerNewUser = async (req, res) => {
-//   try {
-//     let { email, password } = req.body;
-
-//     // Verificar si el usuario ya existe
-//     let user = await User.findOne({ email });
-//     if (user) {
-//       return res.status(400).json({ message: 'El usuario ya existe' });
-//     }
-
-//     // Hashear la contraseña antes de guardar el usuario
-//     const salt = await bcrypt.genSalt(10);
-//     password = await bcrypt.hash(password, salt);
-
-//     // Crear y guardar el nuevo usuario
-//     user = new User({ email, password });
-//     await user.save();
-
-//     res.status(201).json({ message: 'Usuario creado exitosamente', user });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error al crear el usuario', error: error.message });
-//   }
-// };
-
-// // Autenticación de usuario
-// exports.loginUser = async (req, res) => {
-//   try {
-//     const { email, password } = req.body;
-
-//     // Buscar el usuario por su correo electrónico
-//     const user = await User.findOne({ email });
-//     if (!user) {
-//       return res.status(401).json({ message: 'Credenciales inválidas' });
-//     }
-
-//     // Comparar la contraseña enviada con la almacenada en la base de datos
-//     const isMatch = await bcrypt.compare(password, user.password);
-//     if (!isMatch) {
-//       return res.status(401).json({ message: 'Credenciales inválidas' });
-//     }
-
-//     // Usuario autenticado con éxito
-//     res.json({ message: 'Inicio de sesión exitoso', user });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error del servidor', error: error.message });
-//   }
-// };

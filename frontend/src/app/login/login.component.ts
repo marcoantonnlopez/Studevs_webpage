@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { AuthService } from '../auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -17,26 +19,75 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class LoginComponent {
-  loginData = {
+export class LoginComponent implements OnInit {
+  errorMessage = '';
+  loginForm: FormGroup;
+  // logInForm: FormGroup;
+
+  user = {
     email: '',
-    password: ''
+    password: '',
   };
 
-  constructor(private authService: AuthService) {}
-
-  onSubmit() {
-    this.authService.login(this.loginData).subscribe(
-      (response) => {
-        console.log('Login successful', response);
-        // Manejar la respuesta aquí, como redirigir al usuario
-      },
-      (error) => {
-        console.error('Login failed', error);
-      }
-    );
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
-}
+
+  get f() {
+    return this.loginForm.controls;
+  }
+
+  ngOnInit(): void {
+      
+  }
+
+  logIn() {
+    this.authService.login(this.user)
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/user']);
+        },
+        err => console.log(err),
+      )
+    console.log(this.user);
+    console.log("prueba");
+  }
+
+  // logIn() {
+  //   this.authService.login(this.user).subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //       localStorage.setItem('token', res.token);
+  //       this.router.navigate(['/user']);
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //     complete: () => {
+  //       console.log("La petición de inicio de sesión se ha completado");
+  //     }
+  //   });
+  //   console.log(this.user);
+  //   console.log("prueba");
+  // }
+  
+//   onSubmit() {
+//     this.authService.login(this.loginData).subscribe(
+//       (response) => {
+//         console.log('Login successful', response);
+//         // Manejar la respuesta aquí, como redirigir al usuario
+//       },
+//       (error) => {
+//         console.error('Login failed', error);
+//       }
+//     );
+//   }
+// }
 
 // *new back
 // login/login.component.ts
@@ -94,5 +145,5 @@ export class LoginComponent {
 //     });
 //   }
 // }
-
+}
 

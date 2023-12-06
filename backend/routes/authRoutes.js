@@ -4,6 +4,9 @@ const { loginUser, registerUser  } = require('../controllers/authController');
 
 const router = express.Router();
 
+router.get('/hw', (req, res) => {
+    res.send('Hello World!'); // 
+});
 // Ruta para iniciar sesión
 router.post('/login', loginUser);
 

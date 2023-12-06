@@ -14,16 +14,3 @@ router.patch('/:id', usersPatch); // Actualizar parcialmente usuario por ID
 // router.post('/login', loginUser);
 
 module.exports = router;
-
-// *New LogIn
-// const express = require('express');
-// const router = express.Router();
-// const userController = require('../controllers/user');
-
-// // Ruta para registrar un nuevo usuario
-// router.post('/register', userController.registerNewUser);
-
-// // Ruta para iniciar sesión
-// router.post('/login', userController.loginUser);
-
-// module.exports = router;

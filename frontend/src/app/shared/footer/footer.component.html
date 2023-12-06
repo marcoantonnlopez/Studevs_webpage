@@ -4,7 +4,14 @@
             <img *ngIf="logoNavbar" [src]="logoNavbar" alt="Descripción alternativa">
           </a>        
         <app-social-media></app-social-media>
-        <app-btn-principal></app-btn-principal>
+        <ng-container *ngIf="!userService.loggedIn(); else loggedIn">
+            <app-btn-principal></app-btn-principal>
+        </ng-container>
+        
+        <ng-template #loggedIn>
+            <a class="nav-link" id="Logout" (click)="userService.logout()">Logout</a>
+        </ng-template>
     </div>
 
+    
       

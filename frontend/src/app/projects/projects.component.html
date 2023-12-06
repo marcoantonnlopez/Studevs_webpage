@@ -1,7 +1,9 @@
 <section>
     <div id="secOne">
         <h1 [@fadeIn]>Projects</h1>
-        <app-add-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-add-btn>
+        <ng-container *ngIf="userService.loggedIn()">
+            <app-add-btn [routerLink]="miRuta" [buttonText]="miTexto" [@fadeIn]></app-add-btn>
+        </ng-container>
     </div>
     <div id="allprojects">
         <div class="projectsDiv">
