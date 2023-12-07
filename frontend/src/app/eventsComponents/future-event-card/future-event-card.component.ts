@@ -15,7 +15,10 @@ export class FutureEventCardComponent {
   constructor(private router: Router, public userService: UserService) {}
 
   goToEvent() {
-    this.router.navigate(['/event', this.event.id]);
-    // this.router.navigate(['/event']);
+    if (this.event && this.event._id) {
+      this.router.navigate(['/event', this.event._id]);
+    } else {
+      console.error('No event ID available');
+    }
   }
 }

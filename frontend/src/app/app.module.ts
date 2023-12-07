@@ -54,6 +54,10 @@ import { EventService } from './services/event.service';
 import { ProjectService } from './services/project.service';
 import { MemberService } from './services/member.service';
 
+// Pipe
+import { SafeUrl } from '@angular/platform-browser';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +94,8 @@ import { MemberService } from './services/member.service';
     EditEventComponent,
     AddEventComponent,
     AddProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

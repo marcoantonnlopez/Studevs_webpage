@@ -1,4 +1,4 @@
-<div id="secOne">
+<!-- <div id="secOne">
     <img src="https://res.cloudinary.com/dmhkvcej4/image/upload/v1701709559/Events/Fondo_gpnnh1.svg" alt="">
     <div class="capa-negra"></div>
 </div>
@@ -29,6 +29,45 @@
 
         <hr>
         
+    </div>
+</section>
+<app-footer></app-footer> -->
+
+<!-- event.component.html -->
+<div id="secOne">
+    <!-- Usar la propiedad 'coverPhoto' del evento para la imagen de fondo -->
+    <img [src]="event?.coverPhoto" alt="">
+    <div class="capa-negra"></div>
+</div>
+<section>
+    <div id="secTwo">
+        <div id="sec2_1">
+            <div class="aux">
+                <!-- Mostrar el nombre del evento -->
+                <h1 id="eventName">{{ event?.name }}</h1> 
+            </div>
+            <!-- Mostrar la fecha del evento -->
+            <p> Date: <span id="date">{{ event?.date | date: 'longDate' }}</span></p>
+            <!-- Mostrar el número de asistentes -->
+            <p><span id="nAssistants">{{ event?.nAssistants }}</span> assistants</p>
+            <!-- Mostrar la ubicación del evento -->
+            <p>Location: <span id="Location">{{ event?.location }}</span></p>
+        </div>
+        <hr>
+        <div id="sec2_2">
+            <div class="descripDiv">
+                <h2>Description</h2>
+                <!-- Mostrar la descripción del evento -->
+                <p id="description">{{ event?.description }}</p>
+            </div>
+        </div>
+        <hr>
+        <div id="sec2_3">
+            <h2>Watch a video. <span> Relieve the experience</span></h2>
+            <!-- Usar el enlace del video del evento para el iframe -->
+            <iframe [src]="event?.videoLink | safeUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <hr>
     </div>
 </section>
 <app-footer></app-footer>

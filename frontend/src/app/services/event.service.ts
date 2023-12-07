@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 export interface AppEvent {
-  id?: string;
+  _id?: string;
   name: string;
   coverPhoto?: string;
   nAssistants?: number;
