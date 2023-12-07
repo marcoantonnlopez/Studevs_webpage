@@ -2,15 +2,26 @@ const Event = require('../models/event');
 
 const eventsController = {
   // Obtener todos los eventos y separarlos por futuros y pasados
-  async getAllEvents(req, res) {
+//   async getAllEvents(req, res) {
+//     try {
+//       const futureEvents = await Event.getFutureEvents();
+//       const pastEvents = await Event.getPastEvents();
+//       res.render('events', { futureEvents, pastEvents });
+//     } catch (err) {
+//       res.status(500).json({ message: err.message });
+//     }
+//   },
+// Obtener todos los eventos y separarlos por futuros y pasados
+async getAllEvents(req, res) {
     try {
       const futureEvents = await Event.getFutureEvents();
       const pastEvents = await Event.getPastEvents();
-      res.render('events', { futureEvents, pastEvents });
+      res.json({ futureEvents, pastEvents }); // Enviar datos como JSON
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
   },
+  
 
   // Obtener información de un evento específico por ID
   async getEventById(req, res) {
@@ -55,6 +66,51 @@ const eventsController = {
     } catch (err) {
       res.status(404).json({ message: 'Evento no encontrado' });
     }
+  },
+
+//   // Obtener eventos futuros
+//   async getFutureEvents(req, res) {
+//     try {
+//       const currentDate = new Date();
+//       const futureEvents = await Event.find({ date: { $gte: currentDate } });
+//       res.json(futureEvents);
+//     } catch (err) {
+//       res.status(500).json({ message: err.message });
+//     }
+//   },
+
+//   // Obtener eventos pasados
+//   async getPastEvents(req, res) {
+//     try {
+//       const currentDate = new Date();
+//       const pastEvents = await Event.find({ date: { $lt: currentDate } });
+//       res.json(pastEvents);
+//     } catch (err) {
+//       res.status(500).json({ message: err.message });
+//     }
+
+// Controlador para obtener eventos futuros
+async getFutureEvents(req, res) {
+    try {
+      const currentDate = new Date();
+      const futureEvents = await Event.find({ date: { $gte: currentDate } });
+      res.json(futureEvents);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  },
+  
+  // Controlador para obtener eventos pasados
+  async getPastEvents(req, res) {
+    try {
+      const currentDate = new Date();
+      const pastEvents = await Event.find({ date: { $lt: currentDate } });
+      res.json(pastEvents);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+
+
   }
 };
 

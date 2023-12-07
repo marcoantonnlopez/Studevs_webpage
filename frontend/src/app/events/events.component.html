@@ -10,14 +10,11 @@
             <div class="eventsInfo">
                 <h2>Future Events</h2>
                 <p>Join new events with studevs community</p>
-
-
             </div>
             <div class="eventsList">
-                <app-future-event-card></app-future-event-card>
-                <app-future-event-card></app-future-event-card>
-                <app-future-event-card></app-future-event-card>
-                <app-future-event-card></app-future-event-card>
+                <ng-container *ngFor="let futureEvent of futureEvents">
+                  <app-future-event-card [event]="futureEvent"></app-future-event-card>
+                </ng-container>
             </div>
         </div>
         <div class="eventsDiv">
@@ -26,18 +23,9 @@
                 <p>Relive all our past events</p>
             </div>
             <div class="eventsList">
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
-                <app-past-event-card></app-past-event-card>
+                <ng-container *ngFor="let pastEvent of pastEvents">
+                  <app-past-event-card [event]="pastEvent"></app-past-event-card>
+                </ng-container>
             </div>
         </div>
     </div>
