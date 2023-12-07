@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventService, Event } from '../../../services/event.service';
+import { EventService, AppEvent } from '../../../services/event.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent {
-  newEvent: Event = {
+  newEvent: AppEvent = {
     name: '',
     coverPhoto: '',
     nAssistants: 0,
@@ -28,14 +28,13 @@ export class AddEventComponent {
   onSubmit() {
     this.eventService.addEvent(this.newEvent)
       .subscribe(
-        (response: Event) => {
-          this.successMessage = 'Evento agregado exitosamente';
+        (response: AppEvent) => { // Asegúrate de usar AppEvent aquí
+          this.successMessage = 'Event added correctly';
           console.log(response);
         },
         (error) => {
-          this.errorMessage = 'Error al agregar el evento';
+          this.errorMessage = 'Error adding event';
           console.log(error);
-          
         }
       );
   }

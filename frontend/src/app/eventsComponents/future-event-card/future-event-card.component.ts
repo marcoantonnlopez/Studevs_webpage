@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { AppEvent } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-future-event-card',
@@ -9,9 +10,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 
 export class FutureEventCardComponent {
+  @Input() event!: AppEvent; //"!" indica que la variable no es null y va a ser asignada en un futuro por el componente padre
+
   constructor(private router: Router, public userService: UserService) {}
 
   goToEvent() {
-    this.router.navigate(['/event']);
+    this.router.navigate(['/event', this.event.id]);
+    // this.router.navigate(['/event']);
   }
 }

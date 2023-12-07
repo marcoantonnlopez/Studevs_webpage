@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { tap, switchMap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-export interface Event {
+export interface AppEvent {
+  id?: string;
   name: string;
   coverPhoto?: string;
   nAssistants?: number;
@@ -19,8 +19,6 @@ export interface Event {
 @Injectable({
   providedIn: 'root'
 })
-
-// * ----- FUNCIONES -----
 export class EventService {
   private eventsUrl = 'http://localhost:8081/api/events';
 
@@ -32,26 +30,34 @@ export class EventService {
 
   // * ----- FUNCIONES PARA BACK ----- 
 
-  getAllEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.eventsUrl);
+  getAllEvents(): Observable<AppEvent[]> {
+    return this.http.get<AppEvent[]>(this.eventsUrl);
   }
 
-  getEventById(eventId: string): Observable<Event> {
+  getEventById(eventId: string): Observable<AppEvent> {
     const url = `${this.eventsUrl}/${eventId}`;
-    return this.http.get<Event>(url);
+    return this.http.get<AppEvent>(url);
   }
 
-  addEvent(eventData: Event): Observable<Event> {
-    return this.http.post<Event>(this.eventsUrl + '/create', eventData);
+  addEvent(eventData: AppEvent): Observable<AppEvent> {
+    return this.http.post<AppEvent>(`${this.eventsUrl}/create`, eventData);
   }
 
-  editEvent(eventId: string, updatedEventData: Event): Observable<Event> {
+  editEvent(eventId: string, updatedEventData: AppEvent): Observable<AppEvent> {
     const url = `${this.eventsUrl}/${eventId}/edit`;
-    return this.http.put<Event>(url, updatedEventData);
+    return this.http.put<AppEvent>(url, updatedEventData);
   }
 
   deleteEvent(eventId: string): Observable<any> {
     const url = `${this.eventsUrl}/${eventId}/delete`;
     return this.http.delete<any>(url);
+  }
+
+  getFutureEvents(): Observable<AppEvent[]> {
+    return this.http.get<AppEvent[]>(`${this.eventsUrl}/future`);
+  }
+
+  getPastEvents(): Observable<AppEvent[]> {
+    return this.http.get<AppEvent[]>(`${this.eventsUrl}/past`);
   }
 }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { UserService } from 'src/app/services/user.service';
+import { EventService, AppEvent } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-events',
@@ -16,10 +17,21 @@ import { UserService } from 'src/app/services/user.service';
     ])
   ]
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit {
+  futureEvents: AppEvent[] = [];
+  pastEvents: AppEvent[] = [];
   miRuta: string = '/add-event';
   miTexto: string = '+ Create an event';
 
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService, private eventService: EventService) {}
 
+  ngOnInit() {
+    this.eventService.getFutureEvents().subscribe((events) => {
+      this.futureEvents = events;
+    });
+
+    this.eventService.getPastEvents().subscribe((events) => {
+      this.pastEvents = events;
+    });
+  }
 }

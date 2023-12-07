@@ -19,9 +19,8 @@ import { EditEventComponent } from './CRUDS-pages/events/edit-event/edit-event.c
 import { EditProjectComponent } from './CRUDS-pages/projects/edit-project/edit-project.component';
 
 const routes: Routes = [
-  // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
+  { path: '**', redirectTo: '/home' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  // { path: 'membersPages/user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'events', component: EventsComponent },
@@ -32,7 +31,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   // Loggeado
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
-  { path: 'event', component: EventComponent },
+  // { path: 'event', component: EventComponent },
   { path: 'project', component: ProjectComponent },
   // CRUDS admin
   { path: 'add-member', component: AddMemberComponent, canActivate: [AuthGuard] },
@@ -41,6 +40,8 @@ const routes: Routes = [
   { path: 'edit-member', component: EditMemberComponent, canActivate: [AuthGuard] },
   { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-project', component: EditProjectComponent, canActivate: [AuthGuard] },
+  // CRUD visualizar
+  { path: 'event-detail/:id', component: EventComponent },
 ];
 
 @NgModule({

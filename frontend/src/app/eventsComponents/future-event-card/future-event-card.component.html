@@ -1,9 +1,15 @@
-<div class="card" (click)="goToEvent()">
-    <!-- <app-on-line-tag></app-on-line-tag> -->
-    <app-on-site-tag></app-on-site-tag>
+<div class="card"  [ngStyle]="{'background-image': 'url(' + event.coverPhoto + ')'}" (click)="goToEvent()">
+    <div class="overlay"></div>
+    <ng-container *ngIf="event.modality">
+        <app-on-line-tag class="modality"></app-on-line-tag>
+    </ng-container>
+    <ng-container *ngIf="!event.modality">
+        <app-on-site-tag class="modality"></app-on-site-tag>
+    </ng-container>
+    
     <div class="info">
-        <h2 id="eventName">Studevs Event name  ></h2>
-        <p id="eventDate">Dec 15, 2023</p>
+        <h2 id="eventName">{{ event.name }}</h2>
+        <p id="eventDate">{{ event.date | date: 'mediumDate' }}</p>
     </div>
 </div>
 <ng-container *ngIf="userService.loggedIn()">
