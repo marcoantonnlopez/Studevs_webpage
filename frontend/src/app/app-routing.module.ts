@@ -19,7 +19,6 @@ import { EditEventComponent } from './CRUDS-pages/events/edit-event/edit-event.c
 import { EditProjectComponent } from './CRUDS-pages/projects/edit-project/edit-project.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: '/home' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
@@ -31,7 +30,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   // Loggeado
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
-  // { path: 'event', component: EventComponent },
+  { path: 'event', component: EventComponent },
   { path: 'project', component: ProjectComponent },
   // CRUDS admin
   { path: 'add-member', component: AddMemberComponent, canActivate: [AuthGuard] },
