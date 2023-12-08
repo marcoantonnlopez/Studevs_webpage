@@ -1,0 +1,104 @@
+<section >
+    <h2>Add New Project</h2>
+    <div class="container  aux">
+        <!-- Mensaje de éxito -->
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+
+        <!-- Mensaje de error -->
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+
+        <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Project Name:</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newProject.name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="logoLink" class="form-label">Logo URL:</label>
+                <input type="text" class="form-control" id="logoLink" name="logoLink" [(ngModel)]="newProject.logoLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="shortDescription" class="form-label">Short Description:</label>
+                <textarea class="form-control" id="shortDescription" name="shortDescription" [(ngModel)]="newProject.shortDescription" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="largeDescription" class="form-label">Large Description:</label>
+                <textarea class="form-control" id="largeDescription" name="largeDescription" [(ngModel)]="newProject.largeDescription" required></textarea>
+            </div>
+
+            <!-- <div class="mb-3">
+                <label for="event" class="form-label">Event name:</label>
+                <input type="text" class="form-control" id="event" name="event" [(ngModel)]="newProject.eventId">
+            </div> -->
+
+            <div class="mb-3">
+                <label for="videoLink" class="form-label">Video URL:</label>
+                <input type="text" class="form-control" id="videoLink" name="videoLink" [(ngModel)]="newProject.videoLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="gitHubLink" class="form-label">GitHub URL:</label>
+                <input type="text" class="form-control" id="gitHubLink" name="gitHubLink" [(ngModel)]="newProject.gitHubLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="additionalLink" class="form-label">Additional Link:</label>
+                <input type="text" class="form-control" id="additionalLink" name="additionalLink" [(ngModel)]="newProject.additionalLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="inspiration" class="form-label">Inspiration:</label>
+                <textarea class="form-control" id="inspiration" name="inspiration" [(ngModel)]="newProject.inspiration"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="whatDoesItDoes" class="form-label">What does it do:</label>
+                <textarea class="form-control" id="whatDoesItDoes" name="whatDoesItDoes" [(ngModel)]="newProject.whatDoesItDoes"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="howWeBuildIt" class="form-label">How we built it:</label>
+                <textarea class="form-control" id="howWeBuildIt" name="howWeBuildIt" [(ngModel)]="newProject.howWeBuildIt"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="challengesWeRanInto" class="form-label">Challenges we ran into:</label>
+                <textarea class="form-control" id="challengesWeRanInto" name="challengesWeRanInto" [(ngModel)]="newProject.challengesWeRanInto"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="whatWeLearned" class="form-label">What we learned:</label>
+                <textarea class="form-control" id="whatWeLearned" name="whatWeLearned" [(ngModel)]="newProject.whatWeLearned"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="nextSteps" class="form-label">Next steps:</label>
+                <textarea class="form-control" id="nextSteps" name="nextSteps" [(ngModel)]="newProject.nextSteps"></textarea>
+            </div>
+
+            <!-- <div class="mb-3">
+                <label for="teamMembers" class="form-label">Team Members IDs:</label>
+                <input type="text" class="form-control" id="teamMembers" name="teamMembers" [(ngModel)]="newProject.teamMembers">
+            </div> -->
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+
+        <!-- Success and Error Messages -->
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+    </div>
+    <br>
+</section>

@@ -28,16 +28,15 @@ const routes: Routes = [
   // Login Signup
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // Loggeado
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   // { path: 'event', component: EventComponent },
-  { path: 'project', component: ProjectComponent },
   // CRUDS admin
   { path: 'add-member', component: AddMemberComponent, canActivate: [AuthGuard] },
   { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] },
   { path: 'add-project', component: AddProjectComponent, canActivate: [AuthGuard] },
   // CRUD visualizar
   { path: 'event/:id', component: EventComponent },
+  { path: 'project/:id', component: ProjectComponent },
+  { path: 'user/:id', component: UserComponent, canActivate: [AuthGuard] },
   // CRUD editar
   { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-project/:id', component: EditProjectComponent, canActivate: [AuthGuard] },

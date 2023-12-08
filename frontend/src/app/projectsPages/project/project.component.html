@@ -3,7 +3,21 @@
 <section>
     <div id="secTwo">
         <div id="sec2_1">
-            <app-project-big-card></app-project-big-card>
+            <!-- <app-project-big-card [imageUrl]="project.logoLink" [description]="project.description"></app-project-big-card> -->
+            <div class="card">
+                <!-- <app-project-icon></app-project-icon> -->
+             <img [src]="project.logoLink" alt="{{ project.name }}">
+
+                <div class="infoCard">
+                    <div class="mainInfo">
+                        <h1 id="ProjectName">{{ project.name }}</h1>
+                    </div>
+                        <p id="description">{{ project.shortDescription }}</p>
+                </div>
+            </div>
+            <hr>
+            
+            
             <div class="projectInfo">
 
             </div>
@@ -11,20 +25,20 @@
         <div id="sec2_2">
             <div class="descripDiv">
                 <h2>Description</h2>
-                <p id="description" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque doloribus obcaecati enim eius consequuntur velit maiores iure unde voluptatem, est a similique consectetur sequi veritatis commodi distinctio eum deserunt!</p>
+                <p id="description">{{ project.largeDescription }}</p>
             </div>
-            <div class="event">
-                <app-past-event-card></app-past-event-card>
-            </div>
+            <!-- <div class="event">
+                <app-past-event-card [pastEvent]="project.pastEvent"></app-past-event-card>
+            </div> -->
         </div>
         <hr>
         <div id="sec2_3">
             <h2>Watch a video. <span> See the project in action</span></h2>
-            <iframe src="https://www.youtube.com/embed/[ID_DEL_VIDEO]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe [src]="getEmbedUrl(project?.videoLink) | safeUrl" frameborder="0" allowfullscreen></iframe>
 
             <div class="links">
-                <a href="" id="gitHubLink">GitHub</a>
-                <a href="" id="addLink">Additional Link</a>
+                <a [href]="project.gitHubLink" id="gitHubLink">GitHub</a>
+              <a [href]="project.additionalLink" id="addLink">Additional Link</a>
             </div>
         </div>
 
@@ -33,40 +47,36 @@
         <div id="sec2_4">
             <div class="projectInfo">
                 <h3>Inspiration</h3>
-                <p id="Inspiration">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+                <p id="Inspiration">{{ project.inspiration }}</p>
             </div>
             <div class="projectInfo">
-                <h3>What Does It Does</h3>
-                <p id="WhatDoesItDoes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+              <h3>What Does It Does</h3>
+              <p id="WhatDoesItDoes">{{ project.whatDoesItDoes }}</p>
             </div>
             <div class="projectInfo">
-                <h3>How We Build It</h3>
-                <p id="HowWeBuildIt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+              <h3>How We Build It</h3>
+              <p id="HowWeBuildIt">{{ project.howWeBuildIt }}</p>
             </div>
             <div class="projectInfo">
-                <h3>Challenges We Ran Into</h3>
-                <p id="ChallengesWeRanInto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+              <h3>Challenges We Ran Into</h3>
+              <p id="ChallengesWeRanInto">{{ project.challengesWeRanInto }}</p>
             </div>
             <div class="projectInfo">
-                <h3>What We Learned</h3>
-                <p id="WhatWeLearned">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+              <h3>What We Learned</h3>
+              <p id="WhatWeLearned">{{ project.whatWeLearned }}</p>
             </div>
             <div class="projectInfo">
-                <h3>Next Steps</h3>
-                <p id="NextSteps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui quasi non provident aliquam. Deleniti modi incidunt odio autem vero.</p>
+              <h3>Next Steps</h3>
+              <p id="NextSteps">{{ project.nextSteps }}</p>
             </div>
         </div>
         <hr>
-        <div id="sec2_5">
+        <!-- <div id="sec2_5">
             <h2>Team members</h2>
             <div id="teamMembers">
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
+                <app-studev-card *ngFor="let member of project.teamMembers" [studev]="member"></app-studev-card>
             </div>
-
-        </div>
+        </div> -->
     </div>
 </section>
 <app-footer></app-footer>

@@ -34,6 +34,10 @@ export class EventService {
     return this.http.get<AppEvent[]>(this.eventsUrl);
   }
 
+  getAllEvents2(): Observable<AppEvent[]> {
+    return this.http.get<AppEvent[]>(this.eventsUrl + '/all');
+  }
+  
   getEventById(eventId: string): Observable<AppEvent> {
     const url = `${this.eventsUrl}/${eventId}`;
     return this.http.get<AppEvent>(url);

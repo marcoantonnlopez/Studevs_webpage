@@ -92,6 +92,15 @@ async getFutureEvents(req, res) {
       res.status(500).json({ message: err.message });
     }
 
+  },
+
+  async getAllEvents2(req, res) {
+    try {
+      const allEvents = await Event.find(); // Utiliza Mongoose para obtener todos los eventos
+      res.json(allEvents); // Envía los eventos como respuesta JSON
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
   }
   
 };
