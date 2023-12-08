@@ -40,6 +40,7 @@ const routes: Routes = [
   // CRUD editar
   { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-project/:id', component: EditProjectComponent, canActivate: [AuthGuard] },
+  // { path: 'edit-project/:id', component: EditProjectComponent },
   { path: 'edit-member/:id', component: EditMemberComponent, canActivate: [AuthGuard] },
 ];
 

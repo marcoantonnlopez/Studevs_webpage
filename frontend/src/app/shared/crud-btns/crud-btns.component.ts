@@ -65,6 +65,7 @@ export class CRUDBtnsComponent {
   // Usa un getter para calcular miRutaEdit
   get miRutaEdit(): string {
     return this.getEditRoute(this.registroTipo, this.registroId);
+    console.log(this.registroId);
   }
 
   private getEditRoute(tipo: string, id: string): string {

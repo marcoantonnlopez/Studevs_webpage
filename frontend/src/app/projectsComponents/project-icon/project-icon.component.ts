@@ -18,6 +18,7 @@ export class ProjectIconComponent implements OnInit {
   ngOnInit() {
     if (this.project && this.project._id) {
       this.miRutaEdit = '/edit-project/' + this.project._id;
+      console.log(this.miRutaEdit);
     }
   }
 
