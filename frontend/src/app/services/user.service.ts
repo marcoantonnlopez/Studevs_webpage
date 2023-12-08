@@ -9,6 +9,11 @@ interface User {
   password: string;
   email?: string;
   userType?: string;
+  name?: string;
+  lastName?: string;
+  profilePhoto?: string;
+  phrase?: string;
+  description?: string;
 }
 
 interface AuthResponse {
