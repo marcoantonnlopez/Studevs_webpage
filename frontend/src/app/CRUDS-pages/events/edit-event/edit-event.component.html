@@ -1,1 +1,68 @@
-<p>edit-event works!</p>
+<section>
+    <h2>Edit Event</h2>
+    <div class="container aux">
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+        
+        <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Event Name:</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="existingEvent.name" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="coverPhoto" class="form-label">Cover Photo (URL):</label>
+                <input type="text" class="form-control" id="coverPhoto" name="coverPhoto" [(ngModel)]="existingEvent.coverPhoto">
+            </div>
+            
+            <div class="mb-3">
+                <label for="nAssistants" class="form-label">Number of Assistants:</label>
+                <input type="number" class="form-control" id="nAssistants" name="nAssistants" [(ngModel)]="existingEvent.nAssistants">
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="location" [(ngModel)]="existingEvent.location">
+            </div>
+            
+            <div class="mb-3">
+                <label for="modality" class="form-label">Modality:</label>
+                <select class="form-select" id="modality" name="modality" [(ngModel)]="existingEvent.modality">
+                    <option value="true">Online</option>
+                    <option value="false">On-site</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description" [(ngModel)]="existingEvent.description"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label for="videoLink" class="form-label">Video Link:</label>
+                <input type="text" class="form-control" id="videoLink" name="videoLink" [(ngModel)]="existingEvent.videoLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" [(ngModel)]="existingEvent.date" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Event</button>
+        </form>
+        <br>
+        <!-- Mensajes de respuesta -->
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+    </div>
+    <br>
+</section>

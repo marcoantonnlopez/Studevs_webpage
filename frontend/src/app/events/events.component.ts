@@ -34,4 +34,6 @@ export class EventsComponent implements OnInit {
       this.pastEvents = events;
     });
   }
+
+  
 }

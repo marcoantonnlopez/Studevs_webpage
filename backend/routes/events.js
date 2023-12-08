@@ -21,6 +21,6 @@ router.post('/create', eventsController.createEvent);
 router.put('/:eventId/edit', eventsController.editEvent);
 
 // Eliminar un evento
-router.delete('/:eventId/delete', eventsController.deleteEvent);
+router.delete('/:eventId', eventsController.deleteEvent);
 
 module.exports = router;

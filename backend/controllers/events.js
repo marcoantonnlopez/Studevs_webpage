@@ -24,15 +24,18 @@ async getAllEvents(req, res) {
   
 
   // Obtener información de un evento específico por ID
-  async getEventById(req, res) {
-    const eventId = req.params.eventId;
+async getEventById(req, res) {
     try {
-      const event = await Event.findById(eventId);
-      res.render('eventDetails', { event });
+      const event = await Event.findById(req.params.eventId);
+      if (event) {
+        res.json(event);
+      } else {
+        res.status(404).send('Evento no encontrado');
+      }
     } catch (err) {
-      res.status(404).json({ message: 'Evento no encontrado' });
+      res.status(500).json({ message: err.message });
     }
-  },
+},
 
   // Crear un nuevo evento
   async createEvent(req, res) {
@@ -68,27 +71,6 @@ async getAllEvents(req, res) {
     }
   },
 
-//   // Obtener eventos futuros
-//   async getFutureEvents(req, res) {
-//     try {
-//       const currentDate = new Date();
-//       const futureEvents = await Event.find({ date: { $gte: currentDate } });
-//       res.json(futureEvents);
-//     } catch (err) {
-//       res.status(500).json({ message: err.message });
-//     }
-//   },
-
-//   // Obtener eventos pasados
-//   async getPastEvents(req, res) {
-//     try {
-//       const currentDate = new Date();
-//       const pastEvents = await Event.find({ date: { $lt: currentDate } });
-//       res.json(pastEvents);
-//     } catch (err) {
-//       res.status(500).json({ message: err.message });
-//     }
-
 // Controlador para obtener eventos futuros
 async getFutureEvents(req, res) {
     try {
@@ -110,8 +92,8 @@ async getFutureEvents(req, res) {
       res.status(500).json({ message: err.message });
     }
 
-
   }
+  
 };
 
 module.exports = eventsController;

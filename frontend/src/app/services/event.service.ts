@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 export interface AppEvent {
-  id?: string;
+  _id?: string;
   name: string;
   coverPhoto?: string;
   nAssistants?: number;
@@ -48,9 +48,12 @@ export class EventService {
     return this.http.put<AppEvent>(url, updatedEventData);
   }
 
+  // deleteEvent(eventId: string): Observable<any> {
+  //   const url = `${this.eventsUrl}/${eventId}/delete`;
+  //   return this.http.delete<any>(url);
+  // }
   deleteEvent(eventId: string): Observable<any> {
-    const url = `${this.eventsUrl}/${eventId}/delete`;
-    return this.http.delete<any>(url);
+    return this.http.delete(`${this.eventsUrl}/${eventId}`);
   }
 
   getFutureEvents(): Observable<AppEvent[]> {

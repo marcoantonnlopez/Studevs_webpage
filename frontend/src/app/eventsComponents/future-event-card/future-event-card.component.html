@@ -1,4 +1,4 @@
-<div class="card"  [ngStyle]="{'background-image': 'url(' + event.coverPhoto + ')'}" (click)="goToEvent()">
+<div *ngIf="event" class="card" [ngStyle]="{'background-image': 'url(' + event.coverPhoto + ')'}" (click)="goToEvent()">
     <div class="overlay"></div>
     <ng-container *ngIf="event.modality">
         <app-on-line-tag class="modality"></app-on-line-tag>
@@ -12,6 +12,6 @@
         <p id="eventDate">{{ event.date | date: 'mediumDate' }}</p>
     </div>
 </div>
-<ng-container *ngIf="userService.loggedIn()">
-    <app-crud-btns></app-crud-btns>
+<ng-container *ngIf="userService.loggedIn() && event && event._id">
+    <app-crud-btns [registroId]="event._id" [registroTipo]="'evento'" (onDelete)="onDelete($event)"></app-crud-btns>
 </ng-container>

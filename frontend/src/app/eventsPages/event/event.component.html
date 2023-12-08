@@ -1,34 +1,37 @@
 <div id="secOne">
-    <img src="https://res.cloudinary.com/dmhkvcej4/image/upload/v1701709559/Events/Fondo_gpnnh1.svg" alt="">
+    <!-- Usar la propiedad 'coverPhoto' del evento para la imagen de fondo -->
+    <img [src]="event?.coverPhoto" alt="">
     <div class="capa-negra"></div>
 </div>
 <section>
     <div id="secTwo">
         <div id="sec2_1">
             <div class="aux">
-                <h1 id="eventName">Event name</h1> 
-
+                <h1 id="eventName">{{ event?.name }}</h1> 
+                <ng-container *ngIf="event.modality">
+                    <app-on-line-tag class="modality"></app-on-line-tag>
+                </ng-container>
+                <ng-container *ngIf="!event.modality">
+                    <app-on-site-tag class="modality"></app-on-site-tag>
+                </ng-container>
             </div>
-            <p> Date: <span id="date"></span></p>
-            <p><span id="nAssistants">100</span> assistants</p> 
-            <p>Location: <span id="Location"></span></p>
+            <p> <b> Date: </b> <span id="date">{{ event?.date | date: 'longDate' }}</span></p>
+            <p><b><span id="nAssistants">{{ event?.nAssistants }}</span></b> assistants</p>
+            <p><b>Location: </b> <span id="Location">{{ event?.location }}</span></p>
         </div>
         <hr>
         <div id="sec2_2">
             <div class="descripDiv">
                 <h2>Description</h2>
-                <p id="description" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque doloribus obcaecati enim eius consequuntur velit maiores iure unde voluptatem, est a similique consectetur sequi veritatis commodi distinctio eum deserunt!</p>
+                <p id="description">{{ event?.description }}</p>
             </div>
         </div>
         <hr>
         <div id="sec2_3">
             <h2>Watch a video. <span> Relieve the experience</span></h2>
-            <iframe src="https://www.youtube.com/embed/[ID_DEL_VIDEO]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+            <iframe [src]="getEmbedUrl(event?.videoLink) | safeUrl" frameborder="0" allowfullscreen></iframe>
         </div>
-
         <hr>
-        
     </div>
 </section>
 <app-footer></app-footer>
