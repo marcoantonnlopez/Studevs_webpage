@@ -34,7 +34,7 @@ export class FutureEventCardComponent implements OnInit {
     this.eventService.deleteEvent(eventId).subscribe({
       next: () => {
         this.eventDeleted.emit(eventId);
-        // Aquí puedes decidir si recargar la página o no
+        location.reload();
       },
       error: (err) => {
         console.error('Error al eliminar el evento:', err);

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppEvent } from '../../../services/event.service';
-import { EventService } from '../../../services/event.service';
+import { AppEvent, EventService } from '../../../services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,8 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-event.component.html',
   styleUrls: ['./edit-event.component.css']
 })
-export class EditEventComponent implements OnInit{
+export class EditEventComponent implements OnInit {
   existingEvent: AppEvent = {} as AppEvent;
+  successMessage: string = '';
+  errorMessage: string = '';
 
   constructor(
     private eventService: EventService,
@@ -20,15 +21,31 @@ export class EditEventComponent implements OnInit{
   ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
     if (eventId) {
-      this.eventService.getEventById(eventId).subscribe(eventData => {
-        this.existingEvent = eventData;
-      });
+      this.eventService.getEventById(eventId).subscribe(
+        eventData => {
+          this.existingEvent = eventData;
+        },
+        error => {
+          this.errorMessage = 'Error loading event: ' + error;
+        }
+      );
     }
   }
 
   onSubmit() {
-    // Lógica para enviar los datos actualizados al servidor
+    if (this.existingEvent && this.existingEvent._id) {
+      this.eventService.editEvent(this.existingEvent._id, this.existingEvent).subscribe({
+        next: () => {
+          this.successMessage = 'Event updated successfully';
+          // Opcional: Redirigir al usuario después de la actualización
+          this.router.navigate(['/event-details', this.existingEvent._id]);
+        },
+        error: error => {
+          this.errorMessage = 'Error updating event: ' + error;
+        }
+      });
+    } else {
+      this.errorMessage = 'Error: No valid event ID';
+    }
   }
 }
-
-

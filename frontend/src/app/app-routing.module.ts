@@ -36,15 +36,12 @@ const routes: Routes = [
   { path: 'add-member', component: AddMemberComponent, canActivate: [AuthGuard] },
   { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] },
   { path: 'add-project', component: AddProjectComponent, canActivate: [AuthGuard] },
-  { path: 'edit-member', component: EditMemberComponent, canActivate: [AuthGuard] },
-  { path: 'edit-event', component: EditEventComponent, canActivate: [AuthGuard] },
-  { path: 'edit-project', component: EditProjectComponent, canActivate: [AuthGuard] },
   // CRUD visualizar
   { path: 'event/:id', component: EventComponent },
   // CRUD editar
-  { path: 'edit-event/:id', component: EditEventComponent },
-  { path: 'edit-project/:id', component: EditProjectComponent },
-  { path: 'edit-member/:id', component: EditMemberComponent },
+  { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard] },
+  { path: 'edit-project/:id', component: EditProjectComponent, canActivate: [AuthGuard] },
+  { path: 'edit-member/:id', component: EditMemberComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
