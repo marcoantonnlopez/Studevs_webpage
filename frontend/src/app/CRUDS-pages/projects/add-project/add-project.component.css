@@ -1,0 +1,26 @@
+
+section {
+    background-color: #0E091F;
+    color: white;
+    width: 100%;
+}
+
+.aux {
+    background-color: #0E091F;
+}
+
+h2 {
+    padding-top: 100px;
+    color: #FFF;
+text-align: center;
+font-family: Aileron;
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1px;
+}
+
+input {
+    background-color: #b1b1b1;
+}

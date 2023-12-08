@@ -23,4 +23,6 @@ router.put('/:eventId/edit', eventsController.editEvent);
 // Eliminar un evento
 router.delete('/:eventId', eventsController.deleteEvent);
 
+router.get('/all', eventsController.getAllEvents2);
+
 module.exports = router;

@@ -1,6 +1,6 @@
-<img src="" alt="" (click)="goToProject()">
-<ng-container *ngIf="userService.loggedIn()">
-    <app-crud-btns></app-crud-btns>
+ <img [src]="project.logoLink" alt="{{ project.name }}" (click)="goToProject()">
+
+ <ng-container *ngIf="userService.loggedIn() && project && project._id">
+    <!-- <app-crud-btns [registroId]="project._id" [registroTipo]="'project'" (onDelete)="onDelete($project)"></app-crud-btns> -->
+    <app-crud-btns [registroId]="project._id" [registroTipo]="'proyecto'" (onDelete)="onDelete(project._id)"></app-crud-btns>
 </ng-container>
-
-

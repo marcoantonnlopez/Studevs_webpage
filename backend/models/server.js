@@ -31,7 +31,7 @@ class Server {
     routes() {
         this.app.use(this.authPath, require("../routes/authRoutes"));
     this.app.use(this.usersPath, require("../routes/users"));
-    // this.app.use(this.projectsPath, require("../routes/projects"));
+    this.app.use(this.projectsPath, require("../routes/projects"));
     this.app.use(this.eventsPath, require("../routes/events"));
 
     // Manejador de rutas no encontradas
