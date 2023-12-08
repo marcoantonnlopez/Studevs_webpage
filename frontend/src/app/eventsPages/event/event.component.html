@@ -43,29 +43,29 @@
     <div id="secTwo">
         <div id="sec2_1">
             <div class="aux">
-                <!-- Mostrar el nombre del evento -->
                 <h1 id="eventName">{{ event?.name }}</h1> 
+                <ng-container *ngIf="event.modality">
+                    <app-on-line-tag class="modality"></app-on-line-tag>
+                </ng-container>
+                <ng-container *ngIf="!event.modality">
+                    <app-on-site-tag class="modality"></app-on-site-tag>
+                </ng-container>
             </div>
-            <!-- Mostrar la fecha del evento -->
-            <p> Date: <span id="date">{{ event?.date | date: 'longDate' }}</span></p>
-            <!-- Mostrar el número de asistentes -->
-            <p><span id="nAssistants">{{ event?.nAssistants }}</span> assistants</p>
-            <!-- Mostrar la ubicación del evento -->
-            <p>Location: <span id="Location">{{ event?.location }}</span></p>
+            <p> <b> Date: </b> <span id="date">{{ event?.date | date: 'longDate' }}</span></p>
+            <p><b><span id="nAssistants">{{ event?.nAssistants }}</span></b> assistants</p>
+            <p><b>Location: </b> <span id="Location">{{ event?.location }}</span></p>
         </div>
         <hr>
         <div id="sec2_2">
             <div class="descripDiv">
                 <h2>Description</h2>
-                <!-- Mostrar la descripción del evento -->
                 <p id="description">{{ event?.description }}</p>
             </div>
         </div>
         <hr>
         <div id="sec2_3">
             <h2>Watch a video. <span> Relieve the experience</span></h2>
-            <!-- Usar el enlace del video del evento para el iframe -->
-            <iframe [src]="event?.videoLink | safeUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe [src]="getEmbedUrl(event?.videoLink) | safeUrl" frameborder="0" allowfullscreen></iframe>
         </div>
         <hr>
     </div>

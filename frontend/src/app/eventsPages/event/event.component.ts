@@ -25,4 +25,13 @@ export class EventComponent implements OnInit{
     }
   }
 
+  getEmbedUrl(videoLink: string | undefined): string {
+    if (videoLink && videoLink.includes('watch?v=')) {
+      return videoLink.replace('watch?v=', 'embed/');
+    }
+    return ''; // Devuelve una cadena vacía si videoLink es undefined
+  }
+  
+  
+
 }
