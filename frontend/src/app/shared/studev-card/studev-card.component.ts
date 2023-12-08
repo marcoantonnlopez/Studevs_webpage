@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./studev-card.component.css']
 })
 export class StudevCardComponent {
-  miIdEspecifico: string = "";
+  @Input() miIdEspecifico: string = "";
   constructor(private router: Router, public userService: UserService) {}
 
   goToUser() {

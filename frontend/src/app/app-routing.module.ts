@@ -41,6 +41,10 @@ const routes: Routes = [
   { path: 'edit-project', component: EditProjectComponent, canActivate: [AuthGuard] },
   // CRUD visualizar
   { path: 'event/:id', component: EventComponent },
+  // CRUD editar
+  { path: 'edit-event/:id', component: EditEventComponent },
+  { path: 'edit-project/:id', component: EditProjectComponent },
+  { path: 'edit-member/:id', component: EditMemberComponent },
 ];
 
 @NgModule({

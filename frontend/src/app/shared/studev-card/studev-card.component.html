@@ -4,8 +4,13 @@
     <p id="userType">Member</p>
 </div>
 <ng-container *ngIf="userService.loggedIn()">
-    <app-crud-btns 
+    <!-- <app-crud-btns 
         [miRutaEdit]="'/edit/' + miIdEspecifico" 
         [miRutaDelete]="'/delete/' + miIdEspecifico">
+    </app-crud-btns> -->
+    <app-crud-btns 
+      [registroId]="miIdEspecifico" 
+      [registroTipo]="'miembro'" 
+      (onDelete)="eliminarRegistro()">
     </app-crud-btns>
 </ng-container>
