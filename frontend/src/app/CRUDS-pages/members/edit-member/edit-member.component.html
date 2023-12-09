@@ -1,1 +1,72 @@
-<p>edit-member works!</p>
+<section>
+    <h2>Edit Member</h2>
+    <div class="container aux">
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+        
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="existingUser.username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="existingUser.email">
+            </div>
+
+            <div class="mb-3">
+                <label for="userType" class="form-label">User Type:</label>
+                <select class="form-select" id="userType" name="userType" [(ngModel)]="existingUser.userType">
+                    <option value="miembro">Member</option>
+                    <option value="admin">Admin</option>
+                    <option value="exadmin">Ex-Admin</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="existingUser.name">
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="existingUser.lastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="profilePhoto" class="form-label">Profile Photo (URL):</label>
+                <input type="text" class="form-control" id="profilePhoto" name="profilePhoto" [(ngModel)]="existingUser.profilePhoto">
+            </div>
+
+            <div class="mb-3">
+                <label for="phrase" class="form-label">Phrase:</label>
+                <input type="text" class="form-control" id="phrase" name="phrase" [(ngModel)]="existingUser.phrase">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description" [(ngModel)]="existingUser.description"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Member</button>
+            <br><br>
+            
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+        <br>
+        </form>
+    </div>
+    <br>
+</section>
+<app-footer></app-footer>

@@ -89,4 +89,11 @@ export class UserService {
     return this.http.delete<any>(`${this.Url}/${userId}`);
   }
   
+  editUser(userId: string, userData: User): Observable<any> {
+    return this.http.put(`${this.Url}/${userId}`, userData);
+  }
+
+  getUserById(userId: string): Observable<User> {
+    return this.http.get<User>(`${this.Url}/${userId}`);
+  }
 }
