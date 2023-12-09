@@ -11,14 +11,7 @@
                 <h2>Admins</h2>
             </div>
             <div class="membersList">
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
+                <app-studev-card *ngFor="let user of admins" [user]="user"></app-studev-card>
             </div>
         </div>
         <div class="membersDiv">
@@ -26,14 +19,7 @@
                 <h2>Members</h2>
             </div>
             <div class="membersList">
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
+                <app-studev-card *ngFor="let user of members" [user]="user"></app-studev-card>
             </div>
         </div>
         <div class="membersDiv">
@@ -41,14 +27,7 @@
                 <h2>Ex-admins</h2>
             </div>
             <div class="membersList">
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
-                <app-studev-card></app-studev-card>
+                <app-studev-card *ngFor="let user of exAdmins" [user]="user"></app-studev-card>
             </div>
         </div>
     </div>

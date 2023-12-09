@@ -1,16 +1,9 @@
 <div (click)="goToUser()">
-    <img src="" alt="">
-    <h1 id="name">User Name</h1>
-    <p id="userType">Member</p>
+    <img src="{{ user?.profilePhoto }}" alt="{{ user?.name }}">
+    <h1 id="name">{{ user?.name }}</h1>
+    <p id="userType">{{ user?.userType }}</p>
 </div>
-<ng-container *ngIf="userService.loggedIn()">
-    <!-- <app-crud-btns 
-        [miRutaEdit]="'/edit/' + miIdEspecifico" 
-        [miRutaDelete]="'/delete/' + miIdEspecifico">
-    </app-crud-btns> -->
-    <app-crud-btns 
-      [registroId]="miIdEspecifico" 
-      [registroTipo]="'miembro'" 
-      (onDelete)="eliminarRegistro()">
-    </app-crud-btns>
+
+<ng-container *ngIf="userService.loggedIn() && user && user._id">
+    <app-crud-btns [registroId]="user._id" [registroTipo]="'miembro'" (onDelete)="onDelete()"></app-crud-btns>
 </ng-container>

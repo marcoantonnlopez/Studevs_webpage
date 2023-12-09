@@ -47,15 +47,38 @@ const usersGet = async (req, res) => {
     }
 };
 
-const usersDelete = async (req, res) => {
+// const usersDelete = async(req, res) => {
+//     const { id } = req.params;
+//     try {
+//         const deletedUser = await User.findByIdAndDelete(id);
+
+//         if (!deletedUser) {
+//             return res.status(404).json({ message: 'Usuario no encontrado' });
+//         }
+
+//         res.json({ message: 'Usuario eliminado exitosamente' });
+//     } catch (err) {
+//         console.error('Error al eliminar usuario:', err);
+//         res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+//     }
+// };
+const usersDelete = async(req, res) => {
     const { id } = req.params;
     try {
-        await User.findByIdAndDelete(id);
-        res.json({ message: 'Usuario eliminado con éxito' });
-    } catch (error) {
-        res.status(500).json({ message: 'Error al eliminar usuario', error });
+        const deletedUser = await User.findByIdAndDelete(id);
+
+        if (!deletedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        res.json({ message: 'Usuario eliminado exitosamente' });
+    } catch (err) {
+        console.error('Error al eliminar usuario:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
+
+
 
 const usersPut = async (req, res) => {
     const { id } = req.params;
