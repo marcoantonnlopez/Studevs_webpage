@@ -1,0 +1,11 @@
+.userType {
+    display: flex;
+width: 123px;
+height: 36px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 20px;
+background: rgb(238, 181, 25)
+}

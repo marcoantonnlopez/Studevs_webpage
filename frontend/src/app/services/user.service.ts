@@ -4,11 +4,17 @@ import { Observable, throwError } from 'rxjs';
 import { tap, switchMap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-interface User {
+export interface User {
+  _id?: string;
   username: string;
   password: string;
   email?: string;
   userType?: string;
+  name?: string;
+  lastName?: string;
+  profilePhoto?: string;
+  phrase?: string;
+  description?: string;
 }
 
 interface AuthResponse {
@@ -72,5 +78,22 @@ export class UserService {
   // * ------ Add member -----
   addUser(userData: any): Observable<any> {
     return this.http.post<any>(`${this.Url}/register`, userData);
+  }
+
+  // * ------ CRUD -----
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.Url}`);
+  }
+  
+  deleteUser(userId: string): Observable<any> {
+    return this.http.delete<any>(`${this.Url}/${userId}`);
+  }
+  
+  editUser(userId: string, userData: User): Observable<any> {
+    return this.http.put(`${this.Url}/${userId}`, userData);
+  }
+
+  getUserById(userId: string): Observable<User> {
+    return this.http.get<User>(`${this.Url}/${userId}`);
   }
 }

@@ -57,6 +57,9 @@ import { MemberService } from './services/member.service';
 // Pipe
 import { SafeUrl } from '@angular/platform-browser';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { AdminTagComponent } from './shared/tagsUserTypes/admin-tag/admin-tag.component';
+import { MemberTagComponent } from './shared/tagsUserTypes/member-tag/member-tag.component';
+import { ExAdminTagComponent } from './shared/tagsUserTypes/ex-admin-tag/ex-admin-tag.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +98,10 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     AddEventComponent,
     AddProjectComponent,
     EditProjectComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    AdminTagComponent,
+    MemberTagComponent,
+    ExAdminTagComponent
   ],
   imports: [
     BrowserModule,

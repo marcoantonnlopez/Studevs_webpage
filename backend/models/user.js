@@ -35,14 +35,14 @@ const userSchema = new mongoose.Schema({
         type: String, 
         default: ''  
     },
-    projects: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Project'
-    }],
-    events: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Event'
-    }],
+    // projects: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Project'
+    // }],
+    // events: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Event'
+    // }],
 
 });
 

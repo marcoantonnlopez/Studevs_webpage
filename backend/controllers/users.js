@@ -47,26 +47,48 @@ const usersGet = async (req, res) => {
     }
 };
 
-const usersDelete = async (req, res) => {
+
+const usersDelete = async(req, res) => {
     const { id } = req.params;
     try {
-        await User.findByIdAndDelete(id);
-        res.json({ message: 'Usuario eliminado con éxito' });
-    } catch (error) {
-        res.status(500).json({ message: 'Error al eliminar usuario', error });
+        const deletedUser = await User.findByIdAndDelete(id);
+
+        if (!deletedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        res.json({ message: 'Usuario eliminado exitosamente' });
+    } catch (err) {
+        console.error('Error al eliminar usuario:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
 
+
+
+// const usersPut = async (req, res) => {
+//     const { id } = req.params;
+//     const { username, email, userType } = req.body; // Asegúrate de excluir la contraseña y otros campos sensibles
+//     try {
+//         const updatedUser = await User.findByIdAndUpdate(id, { username, email, userType }, { new: true }).select('-password');
+//         res.json({ message: 'Usuario actualizado con éxito', updatedUser });
+//     } catch (error) {
+//         res.status(500).json({ message: 'Error al actualizar usuario', error });
+//     }
+// };
 const usersPut = async (req, res) => {
     const { id } = req.params;
-    const { username, email, userType } = req.body; // Asegúrate de excluir la contraseña y otros campos sensibles
     try {
-        const updatedUser = await User.findByIdAndUpdate(id, { username, email, userType }, { new: true }).select('-password');
-        res.json({ message: 'Usuario actualizado con éxito', updatedUser });
+      const updatedUser = await User.findByIdAndUpdate(id, req.body, { new: true });
+      if (!updatedUser) {
+        return res.status(404).send('User not found');
+      }
+      res.json(updatedUser);
     } catch (error) {
-        res.status(500).json({ message: 'Error al actualizar usuario', error });
+      res.status(500).send('Server error');
     }
-};
+  };
+  
 
 const usersPatch = async (req, res) => {
     const { id } = req.params;
@@ -79,4 +101,16 @@ const usersPatch = async (req, res) => {
     }
 };
 
-module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch };
+const getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    res.json(user);
+  } catch (error) {
+    res.status(500).send('Server error');
+  }
+};
+
+module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch, getUserById };

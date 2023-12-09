@@ -36,7 +36,7 @@ const routes: Routes = [
   // CRUD visualizar
   { path: 'event/:id', component: EventComponent },
   { path: 'project/:id', component: ProjectComponent },
-  { path: 'user/:id', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'user/:id', component: UserComponent },
   // CRUD editar
   { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard] },
   { path: 'edit-project/:id', component: EditProjectComponent, canActivate: [AuthGuard] },
