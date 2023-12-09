@@ -40,7 +40,7 @@ export class EditMemberComponent implements OnInit {
       this.userService.editUser(this.existingUser._id, this.existingUser).subscribe({
         next: () => {
           this.successMessage = 'User updated successfully';
-          // this.router.navigate(['/user-details', this.existingUser._id]);
+          this.router.navigate(['/user-details', this.existingUser._id]);
         },
         error: error => {
           this.errorMessage = 'Error updating user: ' + error;
