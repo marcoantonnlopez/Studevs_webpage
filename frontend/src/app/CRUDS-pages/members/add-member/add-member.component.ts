@@ -26,12 +26,11 @@ export class AddMemberComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   onSubmit() {
-    this.userService.addUser(this.newUser)
+    this.userService.addUser2(this.newUser)
       .subscribe(
         (response) => { 
           this.successMessage = 'Member added successfully';
           console.log(response);
-          // Opcionalmente, redirigir a otra ruta
           // this.router.navigate(['/some-other-route']);
         },
         (error) => {

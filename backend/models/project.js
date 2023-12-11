@@ -12,9 +12,9 @@ const projectSchema = new mongoose.Schema({
     // },
     videoLink: String,
     gitHubLink: String,
-    AdditionaLink: String,
+    additionalLink: String,
 
-    Inspiration: String,
+    inspiration: String,
     whatDoesItDoes: String,
     howWeBuildIt: String,
     challengesWeRanInto: String,

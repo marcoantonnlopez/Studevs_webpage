@@ -38,6 +38,43 @@ const registerUser = async (req, res) => {
     }
 };
 
+const createUser = async (req, res) => {
+    try {
+        const { username, password, email, userType, name, lastname, profilePhoto, phrase, description } = req.body;
+
+        // Verificar si el email o username ya están en uso
+        const userExists = await User.findOne({ $or: [{ email }, { username }] });
+        if (userExists) {
+            return res.status(400).json({ message: 'El correo electrónico o nombre de usuario ya están en uso' });
+        }
+
+        // Hashear la contraseña antes de guardarla
+        const hashedPassword = await bcrypt.hash(password, 12);
+
+        // Crear un nuevo usuario
+        const newUser = new User({
+            username,
+            password: hashedPassword,
+            email,
+            userType,
+            name,
+            lastname,
+            profilePhoto,
+            phrase,
+            description
+        });
+
+        // Guardar el usuario en la base de datos
+        await newUser.save();
+
+        // Respuesta exitosa con la información del nuevo usuario
+        res.status(201).json({ message: 'Usuario creado con éxito', newUser });
+    } catch (error) {
+        res.status(500).json({ message: 'Error al crear usuario', error });
+    }
+};
+
+
 const usersGet = async (req, res) => {
     try {
         const users = await User.find({}).select('-password'); // Excluir la contraseña al enviar la respuesta
@@ -64,18 +101,6 @@ const usersDelete = async(req, res) => {
     }
 };
 
-
-
-// const usersPut = async (req, res) => {
-//     const { id } = req.params;
-//     const { username, email, userType } = req.body; // Asegúrate de excluir la contraseña y otros campos sensibles
-//     try {
-//         const updatedUser = await User.findByIdAndUpdate(id, { username, email, userType }, { new: true }).select('-password');
-//         res.json({ message: 'Usuario actualizado con éxito', updatedUser });
-//     } catch (error) {
-//         res.status(500).json({ message: 'Error al actualizar usuario', error });
-//     }
-// };
 const usersPut = async (req, res) => {
     const { id } = req.params;
     try {
@@ -113,4 +138,4 @@ const getUserById = async (req, res) => {
   }
 };
 
-module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch, getUserById };
+module.exports = { usersGet, registerUser, usersDelete, usersPut, usersPatch, getUserById, createUser };

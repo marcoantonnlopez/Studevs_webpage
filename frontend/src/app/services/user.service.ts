@@ -80,6 +80,10 @@ export class UserService {
     return this.http.post<any>(`${this.Url}/register`, userData);
   }
 
+  addUser2(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.Url}/create`, userData);
+  }
+
   // * ------ CRUD -----
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.Url}`);

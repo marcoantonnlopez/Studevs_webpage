@@ -1,11 +1,11 @@
 const express = require('express');
-const { usersGet, usersDelete, usersPut, usersPatch, registerUser, getUserById } = require('../controllers/users');
+const { usersGet, usersDelete, usersPut, usersPatch, registerUser, getUserById, createUser } = require('../controllers/users');
 const { loginUser } = require('../controllers/authController');
 const router = express.Router();
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', registerUser);
-
+router.post('/create', createUser);
 // Ruta para obtener todos los usuarios
 router.get('/', usersGet);
 
