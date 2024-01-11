@@ -11,7 +11,6 @@ export class NavbarComponent {
   logoNavbar: string = ''; 
   isScrolled = false;
 
-  // constructor(private userService: UserService) { }
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
@@ -21,6 +20,6 @@ export class NavbarComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.isScrolled = scrollPosition > 100; // Ajusta el 100 según tus necesidades
+    this.isScrolled = scrollPosition > 100; 
   }
 }

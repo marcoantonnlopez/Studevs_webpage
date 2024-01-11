@@ -45,21 +45,21 @@ export class UserService {
   }
 
   // *Por si acaso
-  login(credentials: { username: string; password: string }): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>('http://localhost:8081/api/auth/login', credentials)
-        .pipe(
-            tap(response => localStorage.setItem('token', response.token)),
-            catchError(this.handleError)
-        );
-  }
+  // login(credentials: { username: string; password: string }): Observable<AuthResponse> {
+  //   return this.http.post<AuthResponse>('http://localhost:8081/api/auth/login', credentials)
+  //       .pipe(
+  //           tap(response => localStorage.setItem('token', response.token)),
+  //           catchError(this.handleError)
+  //       );
+  // }
 
   // *Por si acaso
-  registerAndLogin(user: User): Observable<AuthResponse> {
-    return this.signUp(user).pipe(
-      switchMap(_ => this.login({ username: user.username, password: user.password })),
-      catchError(this.handleError)
-    );
-  }
+  // registerAndLogin(user: User): Observable<AuthResponse> {
+  //   return this.signUp(user).pipe(
+  //     switchMap(_ => this.login({ username: user.username, password: user.password })),
+  //     catchError(this.handleError)
+  //   );
+  // }
 
   // Verificar si está loggeado el usuario
   loggedIn(): Boolean {
@@ -78,6 +78,10 @@ export class UserService {
   // * ------ Add member -----
   addUser(userData: any): Observable<any> {
     return this.http.post<any>(`${this.Url}/register`, userData);
+  }
+
+  addUser2(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.Url}/create`, userData);
   }
 
   // * ------ CRUD -----
