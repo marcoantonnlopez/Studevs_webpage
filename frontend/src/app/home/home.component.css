@@ -502,4 +502,13 @@ letter-spacing: -2.4px;
     letter-spacing: -2px;
 }
 
+@media screen and (max-width: 971px) {
+    #secThree img {
+        width: 34%;
+        height: 43%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px ;
+    }
+}
 
