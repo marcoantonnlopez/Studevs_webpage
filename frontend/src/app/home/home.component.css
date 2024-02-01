@@ -243,7 +243,9 @@ letter-spacing: -2.4px;
 
 #secFour {
     width: 100%;
-    height: 120vh;
+    /* height: 120vh; */
+    min-height: 120vh;
+    /* height: auto; */
     padding-top: 60px;
     background-color: #0E091F;
     display: flex;
@@ -510,5 +512,44 @@ letter-spacing: -2.4px;
         object-position: center;
         border-radius: 20px ;
     }
+
+    .item5 h2 {
+        font-size: 400%;
+    }
 }
 
+
+@media screen and (max-width: 830px) {
+    #secOne {
+        height: 80vh + 60px;
+    }
+
+    #c1 {
+        height: 10vh;
+    }
+    
+    #c2 {
+        height: 45vh;
+    }
+    
+    #c2-1 {
+        height: 35vh;
+        gap: 08%;
+    }
+    
+    #c2-2 {
+        height: 15vh;
+    }
+    
+    #c3 {
+        height: 25vh;
+    }
+    h1 {
+        font-size: 2rem;
+
+    }
+    .sec22 {
+        height: 60vh;
+    }
+
+}
