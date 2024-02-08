@@ -243,26 +243,21 @@ letter-spacing: -2.4px;
 
 #secFour {
     width: 100%;
-    /* height: 120vh; */
-    min-height: 120vh;
-    /* height: auto; */
+    min-height: 100vh;
     padding-top: 60px;
     background-color: #0E091F;
     display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        /* flex-wrap: wrap; */
     text-align: center;
-    /* gap: 2rem; */
     gap: 05%;
     background-image: url('https://res.cloudinary.com/dmhkvcej4/image/upload/v1701101957/home/sec4_background_flkyh8.svg');
         object-fit: cover;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-}
+    }
 
 .sec4 {
     color: white;
@@ -504,10 +499,21 @@ letter-spacing: -2.4px;
     letter-spacing: -2px;
 }
 
+/* * ------------- @MEDIA ------------ */
+
+@media screen and (max-width: 1700px) {
+    #secThree img {
+        width: 34%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px ;
+    }
+}
+
 @media screen and (max-width: 971px) {
     #secThree img {
         width: 34%;
-        height: 43%;
+        height: 33%;
         object-fit: cover;
         object-position: center;
         border-radius: 20px ;
@@ -550,6 +556,9 @@ letter-spacing: -2.4px;
     }
     .sec22 {
         height: 60vh;
+    }
+    #sec41 p{
+        text-align: center;
     }
 
 }
